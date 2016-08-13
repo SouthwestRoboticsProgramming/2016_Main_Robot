@@ -42,6 +42,15 @@ public class DriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        
+    	double left = Robot.oi.leftJoystick.getY();
+    	double right = Robot.oi.rightJoystick.getY();
+    	
+    	SmartDashboard.putNumber("Left", left);
+    	SmartDashboard.putNumber("Right", right);
+    	
+    	Robot.drive.DriveCommand(left,right);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
