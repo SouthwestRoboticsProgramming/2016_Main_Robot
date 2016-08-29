@@ -12,7 +12,6 @@
 package org.usfirst.frc2129.swRobotics2016b.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc2129.swRobotics2016b.Robot;
 
 /**
  *

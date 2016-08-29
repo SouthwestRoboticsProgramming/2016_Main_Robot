@@ -11,12 +11,16 @@
 
 package org.usfirst.frc2129.swRobotics2016b;
 
+import org.usfirst.frc2129.swRobotics2016b.commands.AutonomousCommand;
+import org.usfirst.frc2129.swRobotics2016b.subsystems.Drive;
+import org.usfirst.frc2129.swRobotics2016b.subsystems.Intake;
+import org.usfirst.frc2129.swRobotics2016b.subsystems.Shooter;
+
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc2129.swRobotics2016b.commands.*;
-import org.usfirst.frc2129.swRobotics2016b.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,6 +30,14 @@ import org.usfirst.frc2129.swRobotics2016b.subsystems.*;
  * directory.
  */
 public class Robot extends IterativeRobot {
+	
+
+	CameraServer server;
+	public Robot() {
+		server = CameraServer.getInstance();
+		server.setQuality(50);
+		server.startAutomaticCapture("cam0");
+	}
 
     Command autonomousCommand;
 
