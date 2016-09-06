@@ -37,15 +37,22 @@ public class moveBallPusherForIntake extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	hasSetExecuted = false;
     }
 
+    private boolean hasSetExecuted;
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	if (!hasSetExecuted)
+    	{
+    		Robot.shooter.setBallPusherForIntake();
+    		hasSetExecuted = true;
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return hasSetExecuted;
     }
 
     // Called once after isFinished returns true

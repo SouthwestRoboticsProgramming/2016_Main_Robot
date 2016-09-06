@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 
@@ -50,6 +51,8 @@ public class Shooter extends Subsystem {
 
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
+    	
+    	
     }
 
     public void spinForIntake() {
@@ -69,6 +72,20 @@ public class Shooter extends Subsystem {
     public void stopSpinning() {
     	spinnerLeftController.set(0);
     	spinnerRightController.set(0);
+    }
+    
+    public void setBallPusherForIntake()
+    {
+    	double intakeAngle = Preferences.getInstance().getDouble("BallPusherIntakeAngle", 0);
+    	SmartDashboard.putNumber("Ball Pusher Intake Angle Preference", intakeAngle);
+    	ballPusherServo.setAngle(intakeAngle);
+    }
+
+    public void pushBallIntoFiringPath()
+    {
+    	double firingAngle = Preferences.getInstance().getDouble("BallPusherFiringAngle", 270);
+    	SmartDashboard.putNumber("Ball Pusher Firing Angle Preference", firingAngle);
+    	ballPusherServo.setAngle(firingAngle);
     }
 
 }
