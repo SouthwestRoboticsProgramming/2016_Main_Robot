@@ -11,10 +11,10 @@
 
 package org.usfirst.frc2129.swRobotics2016b.commands;
 
+import org.usfirst.frc2129.swRobotics2016b.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import org.usfirst.frc2129.swRobotics2016b.Robot;
 
 /**
  *
