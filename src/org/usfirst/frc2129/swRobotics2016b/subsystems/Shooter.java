@@ -55,14 +55,14 @@ public class Shooter extends Subsystem {
 
     public void spinForIntake() {
     	//spinSpeed = Robot.preferences
-    	double spinSpeed = Robot.preferences.getDouble("intakeSpinSpeed", .1);
+    	double spinSpeed = Robot.preferences.getDouble("intakeSpinSpeed", .5);
     	spinnerLeftController.set(spinSpeed);
     	spinnerRightController.set(spinSpeed * -1.0);
     }
     
     public void spinForShooting() {
     	//spinSpeed = Robot.preferences
-    	double spinSpeed = Robot.preferences.getDouble("shootSpinSpeed", .35);
+    	double spinSpeed = Robot.preferences.getDouble("shootSpinSpeed", .75);
     	spinnerLeftController.set(spinSpeed * -1.0);
     	spinnerRightController.set(spinSpeed);
     }
