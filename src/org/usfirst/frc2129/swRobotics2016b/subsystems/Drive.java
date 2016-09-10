@@ -51,7 +51,7 @@ public class Drive extends Subsystem {
     
     public void DriveCommand(double left, double right)
     {
-    	tankDrive.drive(left, right);
+    	tankDrive.tankDrive(left, right);
     }
 }
 
