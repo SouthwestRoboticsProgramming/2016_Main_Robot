@@ -13,6 +13,8 @@ package org.usfirst.frc2129.swRobotics2016b;
 
 import org.usfirst.frc2129.swRobotics2016b.commands.AutonomousCommand;
 import org.usfirst.frc2129.swRobotics2016b.commands.DriveCommand;
+import org.usfirst.frc2129.swRobotics2016b.commands.Shooter_SpinWheelsForIntake;
+import org.usfirst.frc2129.swRobotics2016b.commands.Shooter_SpinWheelsForLaunch;
 import org.usfirst.frc2129.swRobotics2016b.commands.intakeLifter;
 import org.usfirst.frc2129.swRobotics2016b.commands.intakeRoller;
 import org.usfirst.frc2129.swRobotics2016b.commands.launchBall;
@@ -20,8 +22,6 @@ import org.usfirst.frc2129.swRobotics2016b.commands.moveBallPusherForIntake;
 import org.usfirst.frc2129.swRobotics2016b.commands.moveBallPusherToLaunch;
 import org.usfirst.frc2129.swRobotics2016b.commands.pickUpBall;
 import org.usfirst.frc2129.swRobotics2016b.commands.shooterLifter;
-import org.usfirst.frc2129.swRobotics2016b.commands.spinShooterWheelsForIntake;
-import org.usfirst.frc2129.swRobotics2016b.commands.spinShooterWheelsForLaunch;
 import org.usfirst.frc2129.swRobotics2016b.commands.stopShooterWheels;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -96,7 +96,7 @@ public class OI {
         shooterFire = new JoystickButton(rightJoystick, 1);
         shooterFire.whenPressed(new launchBall());
         shooterOut = new JoystickButton(rightJoystick, 6);
-        shooterOut.whileHeld(new spinShooterWheelsForLaunch());
+        shooterOut.whileHeld(new Shooter_SpinWheelsForLaunch());
         shooterIn = new JoystickButton(rightJoystick, 4);
         shooterIn.whenPressed(new moveBallPusherForIntake());
         shooterDown = new JoystickButton(rightJoystick, 5);
@@ -122,8 +122,8 @@ public class OI {
         SmartDashboard.putData("DriveCommand", new DriveCommand());
         SmartDashboard.putData("intakeRoller", new intakeRoller());
         SmartDashboard.putData("intakeLifter", new intakeLifter());
-        SmartDashboard.putData("spinShooterWheelsForLaunch", new spinShooterWheelsForLaunch());
-        SmartDashboard.putData("spinShooterWheelsForIntake", new spinShooterWheelsForIntake());
+        SmartDashboard.putData("Shooter_SpinWheelsForLaunch", new Shooter_SpinWheelsForLaunch());
+        SmartDashboard.putData("Shooter_SpinWheelsForIntake", new Shooter_SpinWheelsForIntake());
         SmartDashboard.putData("shooterLifter", new shooterLifter());
         SmartDashboard.putData("moveBallPusherToLaunch", new moveBallPusherToLaunch());
         SmartDashboard.putData("moveBallPusherForIntake", new moveBallPusherForIntake());

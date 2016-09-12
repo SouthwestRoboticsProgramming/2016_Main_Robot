@@ -412,7 +412,7 @@ Children:
           name: Command
           type: Command
           validators: *id006
-          value: shooterLifter
+          value: None
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: whileHeld
@@ -441,7 +441,7 @@ Children:
           name: Command
           type: Command
           validators: *id006
-          value: shooterLifter
+          value: None
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: whileHeld
@@ -499,7 +499,7 @@ Children:
           name: Command
           type: Command
           validators: *id006
-          value: spinShooterWheelsForLaunch
+          value: Shooter_SpinWheelsForLaunch
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: whileHeld
@@ -557,7 +557,7 @@ Children:
           name: Command
           type: Command
           validators: *id006
-          value: shooterLifter
+          value: None
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: whileHeld
@@ -586,7 +586,7 @@ Children:
           name: Command
           type: Command
           validators: *id006
-          value: shooterLifter
+          value: None
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id007
           default: whileHeld
@@ -681,7 +681,7 @@ Children:
     Base: Command
     Name: intakeLifter
   - Children: []
-    Properties: &id015
+    Properties: &id016
       Parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
         name: Parameters
@@ -697,7 +697,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: spinShooterWheelsForLaunch
+    Name: Shooter_SpinWheelsForLaunch
   - Children: []
     Properties: &id013
       Parameters: !!robotbuilder.data.properties.ParametersProperty
@@ -715,9 +715,9 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: spinShooterWheelsForIntake
+    Name: Shooter_SpinWheelsForIntake
   - Children: []
-    Properties:
+    Properties: &id017
       Parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
         name: Parameters
@@ -733,25 +733,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: shooterLifter
-  - Children: []
-    Properties: &id016
-      Parameters: !!robotbuilder.data.properties.ParametersProperty
-        default: []
-        name: Parameters
-        validators: null
-        value: []
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Shooter}
-      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: []
-        name: Parameter presets
-        validators: null
-        value: []
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
-    Base: Command
-    Name: moveBallPusherToLaunch
+    Name: Shooter_MoveBallPusherToLaunch
   - Children: []
     Properties: &id011
       Parameters: !!robotbuilder.data.properties.ParametersProperty
@@ -785,11 +767,11 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: &id023 [List]
+        validators: &id014 [List]
         value:
         - !!robotbuilder.data.CommandGroupEntry
-          command:
-            base: &id012
+          command: &id019
+            base: &id015
               help: A command specifies an action that the robot can perform.
               name: Command
               properties:
@@ -821,10 +803,29 @@ Children:
           previous: null
         - !!robotbuilder.data.CommandGroupEntry
           command:
-            base: *id012
+            base:
+              help: A command specifies an action that the robot can perform.
+              name: Command
+              properties:
+              - !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+                name: Requires, type: Subsystem, validators: null, value: None}
+              - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
+                validators: null, value: true}
+              - !!robotbuilder.data.properties.ParametersProperty
+                default: []
+                name: Parameters
+                validators: null
+                value: []
+              - !!robotbuilder.data.properties.ParameterSetProperty
+                default: &id012 []
+                name: Parameter presets
+                validators: null
+                value: *id012
+              supports: {}
+              type: Command
             name: spinShooterWheelsForIntake
             properties: *id013
-          hasMatch: true
+          hasMatch: false
           order: Parallel
           parameters:
             default: []
@@ -844,29 +845,19 @@ Children:
         validators: null
         value: []
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id014 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id014
+        value: []
       Commands: !!robotbuilder.data.properties.ListProperty
-        default: &id024
-        - &id017 !!robotbuilder.data.CommandGroupEntry
+        default: []
+        name: Commands
+        validators: *id014
+        value:
+        - &id018 !!robotbuilder.data.CommandGroupEntry
           command:
-            base: *id012
-            name: spinShooterWheelsForLaunch
-            properties: *id015
-          hasMatch: true
-          order: Sequential
-          parameters:
-            default: []
-            name: ParametersProperty
-            validators: null
-            value: []
-          previous: null
-        - &id019 !!robotbuilder.data.CommandGroupEntry
-          command:
-            base: *id012
-            name: moveBallPusherToLaunch
+            base: *id015
+            name: Shooter_SpinWheelsForLaunch
             properties: *id016
           hasMatch: true
           order: Sequential
@@ -875,45 +866,12 @@ Children:
             name: ParametersProperty
             validators: null
             value: []
-          previous: *id017
-        - &id022 !!robotbuilder.data.CommandGroupEntry
+          previous: null
+        - &id020 !!robotbuilder.data.CommandGroupEntry
           command:
-            base:
-              help: A command specifies an action that the robot can perform.
-              name: Command
-              properties:
-              - !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: None}
-              - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
-                validators: null, value: true}
-              - !!robotbuilder.data.properties.ParametersProperty
-                default: []
-                name: Parameters
-                validators: null
-                value: []
-              - !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id018 []
-                name: Parameter presets
-                validators: null
-                value: *id018
-              supports: {}
-              type: Command
-            name: moveBallPusherForIntake
-            properties:
-              Parameters: !!robotbuilder.data.properties.ParametersProperty
-                default: []
-                name: Parameters
-                validators: null
-                value: []
-              Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: Shooter}
-              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-                default: []
-                name: Parameter presets
-                validators: null
-                value: []
-              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
-                default: true, name: Button on SmartDashboard, validators: null, value: true}
+            base: *id015
+            name: Shooter_MoveBallPusherToLaunch
+            properties: *id017
           hasMatch: true
           order: Sequential
           parameters:
@@ -921,7 +879,17 @@ Children:
             name: ParametersProperty
             validators: null
             value: []
-          previous: *id019
+          previous: *id018
+        - &id022 !!robotbuilder.data.CommandGroupEntry
+          command: *id019
+          hasMatch: true
+          order: Sequential
+          parameters:
+            default: []
+            name: ParametersProperty
+            validators: null
+            value: []
+          previous: *id020
         - !!robotbuilder.data.CommandGroupEntry
           command:
             base:
@@ -938,10 +906,10 @@ Children:
                 validators: null
                 value: []
               - !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id020 []
+                default: &id021 []
                 name: Parameter presets
                 validators: null
-                value: *id020
+                value: *id021
               supports: {}
               type: Command
             name: stopShooterWheels
@@ -954,10 +922,10 @@ Children:
               Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
                 name: Requires, type: Subsystem, validators: null, value: Shooter}
               Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id021 []
+                default: []
                 name: Parameter presets
                 validators: null
-                value: *id021
+                value: []
               Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
                 default: true, name: Button on SmartDashboard, validators: null, value: true}
           hasMatch: true
@@ -968,9 +936,6 @@ Children:
             validators: null
             value: []
           previous: *id022
-        name: Commands
-        validators: *id023
-        value: *id024
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
@@ -985,14 +950,32 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Shooter}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id025 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id025
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: stopShooterWheels
+  - Children: []
+    Properties:
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Shooter}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id023 []
+        name: Parameter presets
+        validators: null
+        value: *id023
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: Shooter_ElevateToPosition
   Properties: {}
   Base: Commands
   Name: Commands
