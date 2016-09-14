@@ -13,16 +13,16 @@ package org.usfirst.frc2129.swRobotics2016b;
 
 import org.usfirst.frc2129.swRobotics2016b.commands.AutonomousCommand;
 import org.usfirst.frc2129.swRobotics2016b.commands.DriveCommand;
-import org.usfirst.frc2129.swRobotics2016b.commands.Shooter_SpinWheelsForIntake;
-import org.usfirst.frc2129.swRobotics2016b.commands.Shooter_SpinWheelsForLaunch;
-import org.usfirst.frc2129.swRobotics2016b.commands.intakeLifter;
-import org.usfirst.frc2129.swRobotics2016b.commands.intakeRoller;
-import org.usfirst.frc2129.swRobotics2016b.commands.launchBall;
-import org.usfirst.frc2129.swRobotics2016b.commands.moveBallPusherForIntake;
-import org.usfirst.frc2129.swRobotics2016b.commands.moveBallPusherToLaunch;
-import org.usfirst.frc2129.swRobotics2016b.commands.pickUpBall;
-import org.usfirst.frc2129.swRobotics2016b.commands.shooterLifter;
-import org.usfirst.frc2129.swRobotics2016b.commands.stopShooterWheels;
+import org.usfirst.frc2129.swRobotics2016b.commands.commandGroup_launchBall;
+import org.usfirst.frc2129.swRobotics2016b.commands.commandGroup_pickUpBall;
+import org.usfirst.frc2129.swRobotics2016b.commands.intakeElevator_moveToPosition;
+import org.usfirst.frc2129.swRobotics2016b.commands.intakeRoller_spinForIntake;
+import org.usfirst.frc2129.swRobotics2016b.commands.shooterElevator_moveToPosition;
+import org.usfirst.frc2129.swRobotics2016b.commands.shooterPusher_moveBallPusherForIntake;
+import org.usfirst.frc2129.swRobotics2016b.commands.shooterPusher_moveBallPusherToLaunch;
+import org.usfirst.frc2129.swRobotics2016b.commands.shooterSpinner_spinWheelsForIntake;
+import org.usfirst.frc2129.swRobotics2016b.commands.shooterSpinner_spinWheelsForLaunch;
+import org.usfirst.frc2129.swRobotics2016b.commands.shooterSpinner_stopShooterWheels;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -70,12 +70,9 @@ public class OI {
     public JoystickButton intakeDown;
     public JoystickButton intakeIn;
     public JoystickButton intakeOut;
-    public JoystickButton joystickButton1;
     public Joystick leftJoystick;
     public JoystickButton shooterUp;
     public JoystickButton shooterDown;
-    public JoystickButton shooterIn;
-    public JoystickButton shooterOut;
     public JoystickButton shooterFire;
     public JoystickButton shooterAutoAim;
     public JoystickButton shooterCalibrate;
@@ -90,46 +87,36 @@ public class OI {
         rightJoystick = new Joystick(1);
         
         shooterCalibrate = new JoystickButton(rightJoystick, 11);
-        shooterCalibrate.whileHeld(new shooterLifter());
+        shooterCalibrate.whileHeld(new shooterElevator_moveToPosition(0));
         shooterAutoAim = new JoystickButton(rightJoystick, 2);
-        shooterAutoAim.whileHeld(new shooterLifter());
+        shooterAutoAim.whileHeld(new commandGroup_launchBall());
         shooterFire = new JoystickButton(rightJoystick, 1);
-        shooterFire.whenPressed(new launchBall());
-        shooterOut = new JoystickButton(rightJoystick, 6);
-        shooterOut.whileHeld(new Shooter_SpinWheelsForLaunch());
-        shooterIn = new JoystickButton(rightJoystick, 4);
-        shooterIn.whenPressed(new moveBallPusherForIntake());
+        shooterFire.whenPressed(new commandGroup_launchBall());
         shooterDown = new JoystickButton(rightJoystick, 5);
-        shooterDown.whileHeld(new shooterLifter());
+        shooterDown.whileHeld(new shooterElevator_moveToPosition(0));
         shooterUp = new JoystickButton(rightJoystick, 3);
-        shooterUp.whileHeld(new shooterLifter());
+        shooterUp.whileHeld(new shooterElevator_moveToPosition(1.0));
         leftJoystick = new Joystick(0);
         
-        joystickButton1 = new JoystickButton(leftJoystick, 1);
-        joystickButton1.whenPressed(new pickUpBall());
         intakeOut = new JoystickButton(leftJoystick, 5);
-        intakeOut.whileHeld(new intakeRoller());
+        intakeOut.whileHeld(new intakeRoller_spinForIntake());
         intakeIn = new JoystickButton(leftJoystick, 4);
-        intakeIn.whileHeld(new intakeRoller());
+        intakeIn.whileHeld(new intakeRoller_spinForIntake());
         intakeDown = new JoystickButton(leftJoystick, 3);
-        intakeDown.whileHeld(new intakeLifter());
+        intakeDown.whileHeld(new intakeElevator_moveToPosition());
         intakeUp = new JoystickButton(leftJoystick, 2);
-        intakeUp.whileHeld(new intakeLifter());
+        intakeUp.whileHeld(new intakeElevator_moveToPosition());
 
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-        SmartDashboard.putData("DriveCommand", new DriveCommand());
-        SmartDashboard.putData("intakeRoller", new intakeRoller());
-        SmartDashboard.putData("intakeLifter", new intakeLifter());
-        SmartDashboard.putData("Shooter_SpinWheelsForLaunch", new Shooter_SpinWheelsForLaunch());
-        SmartDashboard.putData("Shooter_SpinWheelsForIntake", new Shooter_SpinWheelsForIntake());
-        SmartDashboard.putData("shooterLifter", new shooterLifter());
-        SmartDashboard.putData("moveBallPusherToLaunch", new moveBallPusherToLaunch());
-        SmartDashboard.putData("moveBallPusherForIntake", new moveBallPusherForIntake());
-        SmartDashboard.putData("pickUpBall", new pickUpBall());
-        SmartDashboard.putData("launchBall", new launchBall());
-        SmartDashboard.putData("stopShooterWheels", new stopShooterWheels());
+        SmartDashboard.putData("shooterSpinner_spinWheelsForLaunch", new shooterSpinner_spinWheelsForLaunch());
+        SmartDashboard.putData("shooterSpinner_spinWheelsForIntake", new shooterSpinner_spinWheelsForIntake());
+        SmartDashboard.putData("shooterSpinner_stopShooterWheels", new shooterSpinner_stopShooterWheels());
+        SmartDashboard.putData("shooterPusher_moveBallPusherToLaunch", new shooterPusher_moveBallPusherToLaunch());
+        SmartDashboard.putData("shooterPusher_moveBallPusherForIntake", new shooterPusher_moveBallPusherForIntake());
+        SmartDashboard.putData("commandGroup_pickUpBall", new commandGroup_pickUpBall());
+        SmartDashboard.putData("commandGroup_launchBall", new commandGroup_launchBall());
 
     // END AUTOGENERATED CODE, SOURCE=ROBOTBUILDER ID=CONSTRUCTORS
     
