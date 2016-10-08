@@ -38,7 +38,7 @@ public class RobotMap {
     public static RobotDrive drivetankDrive;
     public static SpeedController shooter_SpinnersLeftController;
     public static SpeedController shooter_SpinnersRightController;
-    public static CANTalon intakeintakeMotor;
+    public static CANTalon intakeRollerIntakeMotor;
     public static PowerDistributionPanel powerDistributionpowerDistributionPanel;
     public static Servo shooter_BallPusherServo;
     public static CANTalon elevatorElevatorDrive;
@@ -75,8 +75,8 @@ public class RobotMap {
         shooter_SpinnersRightController = new Jaguar(3);
         LiveWindow.addActuator("Shooter_Spinners", "RightController", (Jaguar) shooter_SpinnersRightController);
         
-        intakeintakeMotor = new CANTalon(6);
-        LiveWindow.addActuator("Intake", "intakeMotor", intakeintakeMotor);
+        intakeRollerIntakeMotor = new CANTalon(6);
+        LiveWindow.addActuator("IntakeRoller", "IntakeMotor", intakeRollerIntakeMotor);
         
         powerDistributionpowerDistributionPanel = new PowerDistributionPanel(0);
         LiveWindow.addSensor("PowerDistribution", "powerDistributionPanel", powerDistributionpowerDistributionPanel);
