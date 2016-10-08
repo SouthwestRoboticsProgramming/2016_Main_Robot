@@ -13,8 +13,6 @@ package org.usfirst.frc2129.swRobotics2016b.subsystems;
 
 import org.usfirst.frc2129.swRobotics2016b.Robot;
 import org.usfirst.frc2129.swRobotics2016b.RobotMap;
-import org.usfirst.frc2129.swRobotics2016b.commands.*;
-import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.SpeedController;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
