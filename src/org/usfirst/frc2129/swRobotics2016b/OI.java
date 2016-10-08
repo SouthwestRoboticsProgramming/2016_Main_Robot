@@ -88,7 +88,7 @@ public class OI {
         leftJoystick = new Joystick(0);
         
         intakeOut = new JoystickButton(leftJoystick, 5);
-        intakeOut.whileHeld(new intakeRoller_spinForIntake());
+        intakeOut.whileHeld(new IntakeRoller_SpinForOutput());
         intakeIn = new JoystickButton(leftJoystick, 4);
         intakeIn.whileHeld(new intakeRoller_spinForIntake());
         intakeDown = new JoystickButton(leftJoystick, 3);

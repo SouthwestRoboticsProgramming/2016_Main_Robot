@@ -397,7 +397,7 @@ Children:
           name: Command
           type: Command
           validators: *id008
-          value: intakeRoller_spinForIntake
+          value: IntakeRoller_SpinForOutput
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id009
           default: whileHeld
