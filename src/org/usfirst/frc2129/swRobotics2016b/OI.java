@@ -11,18 +11,7 @@
 
 package org.usfirst.frc2129.swRobotics2016b;
 
-import org.usfirst.frc2129.swRobotics2016b.commands.AutonomousCommand;
-import org.usfirst.frc2129.swRobotics2016b.commands.commandGroup_launchBall;
-import org.usfirst.frc2129.swRobotics2016b.commands.commandGroup_pickUpBall;
-import org.usfirst.frc2129.swRobotics2016b.commands.intakeElevator_moveToPosition;
-import org.usfirst.frc2129.swRobotics2016b.commands.intakeRoller_spinForIntake;
-import org.usfirst.frc2129.swRobotics2016b.commands.intakeRoller_spinStop;
-import org.usfirst.frc2129.swRobotics2016b.commands.shooterElevator_moveToPosition;
-import org.usfirst.frc2129.swRobotics2016b.commands.shooterPusher_moveBallPusherForIntake;
-import org.usfirst.frc2129.swRobotics2016b.commands.shooterPusher_moveBallPusherToLaunch;
-import org.usfirst.frc2129.swRobotics2016b.commands.shooterSpinner_spinWheelsForIntake;
-import org.usfirst.frc2129.swRobotics2016b.commands.shooterSpinner_spinWheelsForLaunch;
-import org.usfirst.frc2129.swRobotics2016b.commands.shooterSpinner_stopShooterWheels;
+import org.usfirst.frc2129.swRobotics2016b.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
