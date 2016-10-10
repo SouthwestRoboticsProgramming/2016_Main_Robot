@@ -45,7 +45,9 @@ public class IntakeRoller extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
-  //TODO: add official speeds in preferences
+  //TODO: 
+  //add official speeds in preferences
+  //find good speeds for this
     public void SetIntakeIn() {
     	intakeMotor.set(0.75);
     }
