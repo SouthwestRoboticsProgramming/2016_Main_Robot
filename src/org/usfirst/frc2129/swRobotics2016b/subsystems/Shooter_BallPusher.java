@@ -46,12 +46,14 @@ public class Shooter_BallPusher extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
+    //Set servo at 0 degrees
     public void setBallPusherForIntake()
     {
     	double pusherTargetAngle = Robot.preferences.getDouble("BallPusherIntakeAngle", 0);
     	servo.setAngle(pusherTargetAngle );
     }
 
+    //Set servo at 180 degrees
     public void pushBallIntoFiringPath()
     {
     	double pusherTargetAngle = Robot.preferences.getDouble("BallPusherFiringAngle", 180);

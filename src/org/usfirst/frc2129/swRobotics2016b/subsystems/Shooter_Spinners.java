@@ -47,6 +47,7 @@ public class Shooter_Spinners extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
+    //Set spinner motors for intake
     public void spinForIntake() {
     	//spinSpeed = Robot.preferences
     	double spinSpeed = Robot.preferences.getDouble("intakeSpinSpeed", .1);
@@ -54,6 +55,7 @@ public class Shooter_Spinners extends Subsystem {
     	rightController.set(spinSpeed * -1.0);
     }
     
+    //Set spinner motors for output
     public void spinForShooting() {
     	//spinSpeed = Robot.preferences
     	double spinSpeed = Robot.preferences.getDouble("shootSpinSpeed", .75);
@@ -61,6 +63,7 @@ public class Shooter_Spinners extends Subsystem {
     	rightController.set(spinSpeed);
     }
     
+    //Set motors to stop
     public void stopSpinning() {
     	leftController.set(0);
     	rightController.set(0);

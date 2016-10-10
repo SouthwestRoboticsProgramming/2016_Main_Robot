@@ -45,14 +45,17 @@ public class IntakeRoller extends Subsystem {
         setDefaultCommand(new org.usfirst.frc2129.swRobotics2016b.commands.intakeRoller_spinStop());
     }
     
+    //Set motor to pull in
     public void SetIntakeIn() {
     	intakeMotor.set(0.75);
     }
     
+    //Set motor to output
     public void SetIntakeOut() {
     	intakeMotor.set(-0.5);
     }
     
+    //Set motor to stop
     public void SetIntakeStop() {
     	intakeMotor.set(0.0);
     }

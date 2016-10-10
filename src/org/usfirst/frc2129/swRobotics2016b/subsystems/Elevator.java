@@ -45,14 +45,17 @@ public class Elevator extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
+    //Set Elevator motor to go up
     public void ElevatorUp() {
     	elevatorDrive.set(0.5);
     }
     
+    //Set Elevator motor to go down
     public void ElevatorDown() {
     	elevatorDrive.set(-0.5);
     }
     
+    //Set Elevator motor to stop
     public void ElevatorStop() {
     	elevatorDrive.set(0.0);
     }
