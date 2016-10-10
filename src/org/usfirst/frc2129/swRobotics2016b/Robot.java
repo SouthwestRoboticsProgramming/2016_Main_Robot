@@ -92,6 +92,7 @@ public class Robot extends IterativeRobot {
         // Display the status of each of the subsystems in SmartDashboard
         // ===============================================================
         SmartDashboard.putData(drive);
+        SmartDashboard.putData(Robot.elevator);
         SmartDashboard.putData(shooter_Spinners);
         SmartDashboard.putData(shooter_BallPusher);
         SmartDashboard.putData(intakeRoller);
