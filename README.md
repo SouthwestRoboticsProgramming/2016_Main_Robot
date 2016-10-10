@@ -10,4 +10,6 @@
 - Fix issues with spinner motors.
 - Find good speeds for Intake and elevator motors
 - Add motor encoder to elevator once its on the robot.
+- Add Autonomous code
+- Clean up code
 
