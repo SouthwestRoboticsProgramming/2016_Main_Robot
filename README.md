@@ -12,5 +12,9 @@ New code for the robot!
 - Add motor encoder to elevator once its on the robot.
 - Fix issues with spinner motors.
 - Add Autonomous code
+- StyleGuide
+
+#StyleGuide
+- We need to follow a style guide
 
 
