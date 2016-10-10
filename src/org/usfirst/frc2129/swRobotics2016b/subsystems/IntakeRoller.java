@@ -45,9 +45,6 @@ public class IntakeRoller extends Subsystem {
         setDefaultCommand(new org.usfirst.frc2129.swRobotics2016b.commands.intakeRoller_spinStop());
     }
     
-  //TODO: 
-  //add official speeds in preferences
-  //find good speeds for this
     public void SetIntakeIn() {
     	intakeMotor.set(0.75);
     }
