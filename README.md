@@ -14,6 +14,7 @@ New code for the robot!
 
 ##Things we SHOULD get done.
 - Clean up code
+- Add throttle
 - Somehow fix the workspace path problem
 - Add motor encoder to elevator once its on the robot.
 - Fix issues with spinner motors.
