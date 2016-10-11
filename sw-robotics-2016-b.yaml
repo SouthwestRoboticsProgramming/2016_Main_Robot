@@ -185,7 +185,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: &id006 [CANID]
-          value: '6'
+          value: '1'
       Base: CAN Talon
       Name: IntakeMotor
     Properties:
@@ -265,7 +265,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id006
-          value: '5'
+          value: '0'
       Base: CAN Talon
       Name: ElevatorDrive
     Properties:

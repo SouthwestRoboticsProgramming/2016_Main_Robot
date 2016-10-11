@@ -75,7 +75,7 @@ public class RobotMap {
         shooter_SpinnersRightController = new Jaguar(3);
         LiveWindow.addActuator("Shooter_Spinners", "RightController", (Jaguar) shooter_SpinnersRightController);
         
-        intakeRollerIntakeMotor = new CANTalon(6);
+        intakeRollerIntakeMotor = new CANTalon(1);
         LiveWindow.addActuator("IntakeRoller", "IntakeMotor", intakeRollerIntakeMotor);
         
         powerDistributionpowerDistributionPanel = new PowerDistributionPanel(0);
@@ -84,7 +84,7 @@ public class RobotMap {
         shooter_BallPusherServo = new Servo(4);
         LiveWindow.addActuator("Shooter_BallPusher", "Servo", shooter_BallPusherServo);
         
-        elevatorElevatorDrive = new CANTalon(5);
+        elevatorElevatorDrive = new CANTalon(0);
         LiveWindow.addActuator("Elevator", "ElevatorDrive", elevatorElevatorDrive);
         
 
