@@ -144,7 +144,7 @@ Children:
           validators: *id003
           value: '1'
       Base: Speed Controller
-      Name: LeftController
+      Name: MotorSpinnerLeft
     - Children: []
       Properties:
         Type: !!robotbuilder.data.properties.ChoicesProperty
@@ -160,7 +160,7 @@ Children:
           validators: *id003
           value: '3'
       Base: Speed Controller
-      Name: RightController
+      Name: MotorSpinnerRight
     Properties:
       Default command parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
