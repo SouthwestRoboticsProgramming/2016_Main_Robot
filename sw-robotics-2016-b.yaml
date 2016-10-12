@@ -175,7 +175,7 @@ Children:
         validators: null
         value: &id004 []
     Base: Subsystem
-    Name: Shooter_Spinners
+    Name: SubsystemSpinners
   - Children:
     - Children: []
       Properties:
@@ -590,7 +590,7 @@ Children:
                 validators: null
                 value: []
               Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: Shooter_Spinners}
+                name: Requires, type: Subsystem, validators: null, value: None}
               Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
                 default: []
                 name: Parameter presets
@@ -665,7 +665,7 @@ Children:
                 validators: null
                 value: []
               Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: Shooter_Spinners}
+                name: Requires, type: Subsystem, validators: null, value: None}
               Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
                 default: []
                 name: Parameter presets
@@ -794,7 +794,7 @@ Children:
         validators: null
         value: []
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Shooter_Spinners}
+        name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
         default: []
         name: Parameter presets
