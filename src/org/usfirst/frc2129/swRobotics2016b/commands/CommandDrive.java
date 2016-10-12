@@ -45,8 +45,8 @@ public class CommandDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	double left = Robot.oi.JoystickLeft.getY();
-    	double right = Robot.oi.JoystickRight.getY();
+    	double left = Robot.oi.joystickLeft.getY();
+    	double right = Robot.oi.joystickRight.getY();
     	
     	SmartDashboard.putNumber("Left", left);
     	SmartDashboard.putNumber("Right", right);

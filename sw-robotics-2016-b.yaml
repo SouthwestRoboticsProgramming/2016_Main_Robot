@@ -531,7 +531,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: &id015 [List]
+        validators: &id014 [List]
         value:
         - !!robotbuilder.data.CommandGroupEntry
           command:
@@ -556,7 +556,7 @@ Children:
               supports: {}
               type: Command
             name: intakeRoller_spinForIntake
-            properties: &id024
+            properties: &id020
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -583,7 +583,7 @@ Children:
           command:
             base: *id013
             name: shooterSpinner_spinWheelsForIntake
-            properties: &id021
+            properties: &id017
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -618,17 +618,20 @@ Children:
         validators: null
         value: []
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id014 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id014
+        value: []
       Commands: !!robotbuilder.data.properties.ListProperty
-        default: &id016
+        default: []
+        name: Commands
+        validators: *id014
+        value:
         - !!robotbuilder.data.CommandGroupEntry
           command:
             base: *id013
             name: IntakeRoller_SpinForOutput
-            properties: &id025
+            properties: &id021
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -655,7 +658,7 @@ Children:
           command:
             base: *id013
             name: shooterSpinner_spinWheelsForLaunch
-            properties: &id020
+            properties: &id016
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -678,9 +681,6 @@ Children:
             validators: null
             value: []
           previous: null
-        name: Commands
-        validators: *id015
-        value: *id016
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
@@ -693,17 +693,20 @@ Children:
         validators: null
         value: []
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id017 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id017
+        value: []
       Commands: !!robotbuilder.data.properties.ListProperty
-        default: &id019
-        - &id018 !!robotbuilder.data.CommandGroupEntry
+        default: []
+        name: Commands
+        validators: *id014
+        value:
+        - &id015 !!robotbuilder.data.CommandGroupEntry
           command:
             base: *id013
             name: shooterPusher_moveBallPusherToLaunch
-            properties: &id022
+            properties: &id018
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -730,7 +733,7 @@ Children:
           command:
             base: *id013
             name: shooterPusher_moveBallPusherForIntake
-            properties: &id023
+            properties: &id019
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -752,10 +755,7 @@ Children:
             name: ParametersProperty
             validators: null
             value: []
-          previous: *id018
-        name: Commands
-        validators: *id015
-        value: *id019
+          previous: *id015
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
@@ -779,11 +779,11 @@ Children:
     Base: Command
     Name: CommandDrive
   - Children: []
-    Properties: *id020
+    Properties: *id016
     Base: Command
     Name: shooterSpinner_spinWheelsForLaunch
   - Children: []
-    Properties: *id021
+    Properties: *id017
     Base: Command
     Name: shooterSpinner_spinWheelsForIntake
   - Children: []
@@ -805,11 +805,11 @@ Children:
     Base: Command
     Name: shooterSpinner_stopShooterWheels
   - Children: []
-    Properties: *id022
+    Properties: *id018
     Base: Command
     Name: shooterPusher_moveBallPusherToLaunch
   - Children: []
-    Properties: *id023
+    Properties: *id019
     Base: Command
     Name: shooterPusher_moveBallPusherForIntake
   - Children: []
@@ -831,11 +831,11 @@ Children:
     Base: Command
     Name: intakeRoller_spinStop
   - Children: []
-    Properties: *id024
+    Properties: *id020
     Base: Command
     Name: intakeRoller_spinForIntake
   - Children: []
-    Properties: *id025
+    Properties: *id021
     Base: Command
     Name: IntakeRoller_SpinForOutput
   - Children: []
