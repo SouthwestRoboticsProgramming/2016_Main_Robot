@@ -9,7 +9,6 @@ New code for the robot!
 
 ##Things we NEED to get done.
 - Test robot with code
-- CAN Talons
 - Add Autonomous code
 - Find good speeds for motors
 
