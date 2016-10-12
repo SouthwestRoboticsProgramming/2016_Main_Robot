@@ -291,7 +291,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: leftJoystick}
+          name: Joystick, validators: null, value: JoystickLeft}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -322,7 +322,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: leftJoystick}
+          name: Joystick, validators: null, value: JoystickLeft}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -351,7 +351,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: leftJoystick}
+          name: Joystick, validators: null, value: JoystickLeft}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -380,7 +380,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: leftJoystick}
+          name: Joystick, validators: null, value: JoystickLeft}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -409,7 +409,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: leftJoystick}
+          name: Joystick, validators: null, value: JoystickLeft}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -443,12 +443,12 @@ Children:
         validators: &id011 [Joystick]
         value: '0'
     Base: Joystick
-    Name: leftJoystick
+    Name: JoystickLeft
   - Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: rightJoystick}
+          name: Joystick, validators: null, value: JoystickRight}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -477,7 +477,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: rightJoystick}
+          name: Joystick, validators: null, value: JoystickRight}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -511,7 +511,7 @@ Children:
         validators: *id011
         value: '1'
     Base: Joystick
-    Name: rightJoystick
+    Name: JoystickRight
   Properties: {}
   Base: OI
   Name: Operator Interface
