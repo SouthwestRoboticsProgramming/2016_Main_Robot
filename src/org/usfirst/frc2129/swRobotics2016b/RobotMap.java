@@ -38,7 +38,7 @@ public class RobotMap {
     public static RobotDrive subsystemDrivetankDrive;
     public static SpeedController subsystemSpinnersMotorSpinnerLeft;
     public static SpeedController subsystemSpinnersMotorSpinnerRight;
-    public static CANTalon subsystemIntakeRollerIntakeMotor;
+    public static CANTalon subsystemIntakeRollercTalonRoller;
     public static PowerDistributionPanel powerDistributionpowerDistributionPanel;
     public static Servo subsystemPusherServoPusher;
     public static CANTalon subsystemElevatorcTalonElevator;
@@ -75,8 +75,8 @@ public class RobotMap {
         subsystemSpinnersMotorSpinnerRight = new Jaguar(3);
         LiveWindow.addActuator("SubsystemSpinners", "MotorSpinnerRight", (Jaguar) subsystemSpinnersMotorSpinnerRight);
         
-        subsystemIntakeRollerIntakeMotor = new CANTalon(1);
-        LiveWindow.addActuator("SubsystemIntakeRoller", "IntakeMotor", subsystemIntakeRollerIntakeMotor);
+        subsystemIntakeRollercTalonRoller = new CANTalon(1);
+        LiveWindow.addActuator("SubsystemIntakeRoller", "cTalonRoller", subsystemIntakeRollercTalonRoller);
         
         powerDistributionpowerDistributionPanel = new PowerDistributionPanel(0);
         LiveWindow.addSensor("PowerDistribution", "powerDistributionPanel", powerDistributionpowerDistributionPanel);

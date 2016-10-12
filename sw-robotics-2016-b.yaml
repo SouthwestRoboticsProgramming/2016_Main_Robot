@@ -187,7 +187,7 @@ Children:
           validators: &id006 [CANID]
           value: '1'
       Base: CAN Talon
-      Name: IntakeMotor
+      Name: cTalonRoller
     Properties:
       Default command parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
