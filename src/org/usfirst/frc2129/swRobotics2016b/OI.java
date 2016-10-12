@@ -73,7 +73,7 @@ public class OI {
         rightJoystick = new Joystick(1);
         
         shooterFire = new JoystickButton(rightJoystick, 1);
-        shooterFire.whenPressed(new shooterSpinner_spinWheelsForLaunch());
+        shooterFire.whenPressed(new commandGroup_Fire());
         leftJoystick = new Joystick(0);
         
         intakeOut = new JoystickButton(leftJoystick, 5);
@@ -89,13 +89,14 @@ public class OI {
 
 
         // SmartDashboard Buttons
+        SmartDashboard.putData("commandGroup_pickUpBall", new commandGroup_pickUpBall());
+        SmartDashboard.putData("commandGroup_Fire", new commandGroup_Fire());
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("shooterSpinner_spinWheelsForLaunch", new shooterSpinner_spinWheelsForLaunch());
         SmartDashboard.putData("shooterSpinner_spinWheelsForIntake", new shooterSpinner_spinWheelsForIntake());
         SmartDashboard.putData("shooterSpinner_stopShooterWheels", new shooterSpinner_stopShooterWheels());
         SmartDashboard.putData("shooterPusher_moveBallPusherToLaunch", new shooterPusher_moveBallPusherToLaunch());
         SmartDashboard.putData("shooterPusher_moveBallPusherForIntake", new shooterPusher_moveBallPusherForIntake());
-        SmartDashboard.putData("commandGroup_pickUpBall", new commandGroup_pickUpBall());
         SmartDashboard.putData("intakeRoller_spinStop", new intakeRoller_spinStop());
         SmartDashboard.putData("IntakeRoller_SpinForOutput", new IntakeRoller_SpinForOutput());
         SmartDashboard.putData("ElevatorUp", new ElevatorUp());
