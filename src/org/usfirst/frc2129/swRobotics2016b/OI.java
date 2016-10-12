@@ -80,9 +80,9 @@ public class OI {
         joystickLeft = new Joystick(0);
         
         buttonRollerOutput = new JoystickButton(joystickLeft, 5);
-        buttonRollerOutput.whileHeld(new IntakeRoller_SpinForOutput());
+        buttonRollerOutput.whileHeld(new CommandRollerOutput());
         buttonRollerIntake = new JoystickButton(joystickLeft, 4);
-        buttonRollerIntake.whileHeld(new intakeRoller_spinForIntake());
+        buttonRollerIntake.whileHeld(new CommandRollerIntake());
         buttonElevatorDown = new JoystickButton(joystickLeft, 3);
         buttonElevatorDown.whileHeld(new CommandElevatorLower());
         buttonElevatorUp = new JoystickButton(joystickLeft, 2);
@@ -100,8 +100,8 @@ public class OI {
         SmartDashboard.putData("shooterSpinner_stopShooterWheels", new shooterSpinner_stopShooterWheels());
         SmartDashboard.putData("shooterPusher_moveBallPusherToLaunch", new shooterPusher_moveBallPusherToLaunch());
         SmartDashboard.putData("shooterPusher_moveBallPusherForIntake", new shooterPusher_moveBallPusherForIntake());
-        SmartDashboard.putData("intakeRoller_spinStop", new intakeRoller_spinStop());
-        SmartDashboard.putData("IntakeRoller_SpinForOutput", new IntakeRoller_SpinForOutput());
+        SmartDashboard.putData("CommandRollerStop", new CommandRollerStop());
+        SmartDashboard.putData("CommandRollerOutput", new CommandRollerOutput());
         SmartDashboard.putData("CommandElevatorRaise", new CommandElevatorRaise());
         SmartDashboard.putData("CommandElevatorLower", new CommandElevatorLower());
         SmartDashboard.putData("CommandElevatorStop", new CommandElevatorStop());
