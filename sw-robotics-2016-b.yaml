@@ -202,7 +202,7 @@ Children:
         validators: null
         value: *id004
     Base: Subsystem
-    Name: IntakeRoller
+    Name: SubsystemIntakeRoller
   - Children:
     - Children: []
       Properties:
@@ -563,7 +563,7 @@ Children:
                 validators: null
                 value: []
               Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: IntakeRoller}
+                name: Requires, type: Subsystem, validators: null, value: None}
               Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
                 default: []
                 name: Parameter presets
@@ -638,7 +638,7 @@ Children:
                 validators: null
                 value: []
               Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: IntakeRoller}
+                name: Requires, type: Subsystem, validators: null, value: None}
               Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
                 default: []
                 name: Parameter presets
@@ -820,7 +820,7 @@ Children:
         validators: null
         value: []
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: IntakeRoller}
+        name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
         default: []
         name: Parameter presets
