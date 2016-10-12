@@ -241,7 +241,7 @@ Children:
           validators: [PWMOutput]
           value: '4'
       Base: Servo
-      Name: Servo
+      Name: ServoPusher
     Properties:
       Default command parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
