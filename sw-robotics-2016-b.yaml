@@ -465,7 +465,7 @@ Children:
           name: Command
           type: Command
           validators: *id008
-          value: shooterSpinner_spinWheelsForLaunch
+          value: CommandGroupSpinUp
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id009
           default: whileHeld
@@ -531,7 +531,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: &id016 [List]
+        validators: &id015 [List]
         value:
         - !!robotbuilder.data.CommandGroupEntry
           command:
@@ -556,7 +556,7 @@ Children:
               supports: {}
               type: Command
             name: intakeRoller_spinForIntake
-            properties: &id021
+            properties: &id024
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -583,7 +583,7 @@ Children:
           command:
             base: *id013
             name: shooterSpinner_spinWheelsForIntake
-            properties: &id018
+            properties: &id021
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -623,12 +623,87 @@ Children:
         validators: null
         value: *id014
       Commands: !!robotbuilder.data.properties.ListProperty
-        default: &id017
-        - &id015 !!robotbuilder.data.CommandGroupEntry
+        default: &id016
+        - !!robotbuilder.data.CommandGroupEntry
+          command:
+            base: *id013
+            name: IntakeRoller_SpinForOutput
+            properties: &id025
+              Parameters: !!robotbuilder.data.properties.ParametersProperty
+                default: []
+                name: Parameters
+                validators: null
+                value: []
+              Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+                name: Requires, type: Subsystem, validators: null, value: IntakeRoller}
+              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+                default: []
+                name: Parameter presets
+                validators: null
+                value: []
+              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
+                default: true, name: Button on SmartDashboard, validators: null, value: true}
+          hasMatch: true
+          order: Parallel
+          parameters:
+            default: []
+            name: ParametersProperty
+            validators: null
+            value: []
+          previous: null
+        - !!robotbuilder.data.CommandGroupEntry
+          command:
+            base: *id013
+            name: shooterSpinner_spinWheelsForLaunch
+            properties: &id020
+              Parameters: !!robotbuilder.data.properties.ParametersProperty
+                default: []
+                name: Parameters
+                validators: null
+                value: []
+              Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+                name: Requires, type: Subsystem, validators: null, value: Shooter_Spinners}
+              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+                default: []
+                name: Parameter presets
+                validators: null
+                value: []
+              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
+                default: true, name: Button on SmartDashboard, validators: null, value: true}
+          hasMatch: true
+          order: Parallel
+          parameters:
+            default: []
+            name: ParametersProperty
+            validators: null
+            value: []
+          previous: null
+        name: Commands
+        validators: *id015
+        value: *id016
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: CommandGroupSpinUp
+  - Children: []
+    Properties:
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id017 []
+        name: Parameter presets
+        validators: null
+        value: *id017
+      Commands: !!robotbuilder.data.properties.ListProperty
+        default: &id019
+        - &id018 !!robotbuilder.data.CommandGroupEntry
           command:
             base: *id013
             name: shooterPusher_moveBallPusherToLaunch
-            properties: &id019
+            properties: &id022
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -655,7 +730,7 @@ Children:
           command:
             base: *id013
             name: shooterPusher_moveBallPusherForIntake
-            properties: &id020
+            properties: &id023
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -677,10 +752,10 @@ Children:
             name: ParametersProperty
             validators: null
             value: []
-          previous: *id015
+          previous: *id018
         name: Commands
-        validators: *id016
-        value: *id017
+        validators: *id015
+        value: *id019
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
@@ -722,25 +797,11 @@ Children:
     Base: Command
     Name: DriveCommand
   - Children: []
-    Properties:
-      Parameters: !!robotbuilder.data.properties.ParametersProperty
-        default: []
-        name: Parameters
-        validators: null
-        value: []
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Shooter_Spinners}
-      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: []
-        name: Parameter presets
-        validators: null
-        value: []
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+    Properties: *id020
     Base: Command
     Name: shooterSpinner_spinWheelsForLaunch
   - Children: []
-    Properties: *id018
+    Properties: *id021
     Base: Command
     Name: shooterSpinner_spinWheelsForIntake
   - Children: []
@@ -762,11 +823,11 @@ Children:
     Base: Command
     Name: shooterSpinner_stopShooterWheels
   - Children: []
-    Properties: *id019
+    Properties: *id022
     Base: Command
     Name: shooterPusher_moveBallPusherToLaunch
   - Children: []
-    Properties: *id020
+    Properties: *id023
     Base: Command
     Name: shooterPusher_moveBallPusherForIntake
   - Children: []
@@ -788,25 +849,11 @@ Children:
     Base: Command
     Name: intakeRoller_spinStop
   - Children: []
-    Properties: *id021
+    Properties: *id024
     Base: Command
     Name: intakeRoller_spinForIntake
   - Children: []
-    Properties:
-      Parameters: !!robotbuilder.data.properties.ParametersProperty
-        default: []
-        name: Parameters
-        validators: null
-        value: []
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: IntakeRoller}
-      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: []
-        name: Parameter presets
-        validators: null
-        value: []
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+    Properties: *id025
     Base: Command
     Name: IntakeRoller_SpinForOutput
   - Children: []
