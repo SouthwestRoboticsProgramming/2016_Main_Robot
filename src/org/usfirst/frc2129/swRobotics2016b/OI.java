@@ -95,7 +95,6 @@ public class OI {
         SmartDashboard.putData("CommandGroupPickUpBall", new CommandGroupPickUpBall());
         SmartDashboard.putData("CommandGroupSpinUp", new CommandGroupSpinUp());
         SmartDashboard.putData("CommandGroupFire", new CommandGroupFire());
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("shooterSpinner_spinWheelsForLaunch", new shooterSpinner_spinWheelsForLaunch());
         SmartDashboard.putData("shooterSpinner_spinWheelsForIntake", new shooterSpinner_spinWheelsForIntake());
         SmartDashboard.putData("shooterSpinner_stopShooterWheels", new shooterSpinner_stopShooterWheels());
