@@ -705,7 +705,7 @@ Children:
         - &id015 !!robotbuilder.data.CommandGroupEntry
           command:
             base: *id013
-            name: shooterPusher_moveBallPusherToLaunch
+            name: CommandPusherSetOut
             properties: &id020
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
@@ -732,7 +732,7 @@ Children:
         - !!robotbuilder.data.CommandGroupEntry
           command:
             base: *id013
-            name: shooterPusher_moveBallPusherForIntake
+            name: CommandPusherSetIn
             properties: &id021
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
@@ -887,11 +887,11 @@ Children:
   - Children: []
     Properties: *id020
     Base: Command
-    Name: shooterPusher_moveBallPusherToLaunch
+    Name: CommandPusherSetOut
   - Children: []
     Properties: *id021
     Base: Command
-    Name: shooterPusher_moveBallPusherForIntake
+    Name: CommandPusherSetIn
   Properties: {}
   Base: Commands
   Name: Commands
