@@ -88,16 +88,16 @@ public class OI {
         buttonElevatorUp = new JoystickButton(joystickLeft, 2);
         buttonElevatorUp.whileHeld(new CommandElevatorRaise());
         buttonShooterIntake = new JoystickButton(joystickLeft, 1);
-        buttonShooterIntake.whileHeld(new shooterSpinner_spinWheelsForIntake());
+        buttonShooterIntake.whileHeld(new CommandSpinnersInput());
 
 
         // SmartDashboard Buttons
         SmartDashboard.putData("CommandGroupPickUpBall", new CommandGroupPickUpBall());
         SmartDashboard.putData("CommandGroupSpinUp", new CommandGroupSpinUp());
         SmartDashboard.putData("CommandGroupFire", new CommandGroupFire());
-        SmartDashboard.putData("shooterSpinner_spinWheelsForLaunch", new shooterSpinner_spinWheelsForLaunch());
-        SmartDashboard.putData("shooterSpinner_spinWheelsForIntake", new shooterSpinner_spinWheelsForIntake());
-        SmartDashboard.putData("shooterSpinner_stopShooterWheels", new shooterSpinner_stopShooterWheels());
+        SmartDashboard.putData("CommandSpinnersOutput", new CommandSpinnersOutput());
+        SmartDashboard.putData("CommandSpinnersInput", new CommandSpinnersInput());
+        SmartDashboard.putData("CommandSpinnersStop", new CommandSpinnersStop());
         SmartDashboard.putData("shooterPusher_moveBallPusherToLaunch", new shooterPusher_moveBallPusherToLaunch());
         SmartDashboard.putData("shooterPusher_moveBallPusherForIntake", new shooterPusher_moveBallPusherForIntake());
         SmartDashboard.putData("CommandRollerStop", new CommandRollerStop());
