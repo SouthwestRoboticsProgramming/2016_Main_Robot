@@ -267,7 +267,7 @@ Children:
           validators: *id006
           value: '0'
       Base: CAN Talon
-      Name: ElevatorDrive
+      Name: cTalonElevator
     Properties:
       Default command parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
