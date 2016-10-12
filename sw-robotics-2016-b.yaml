@@ -318,7 +318,7 @@ Children:
           validators: null
           value: whileHeld
       Base: Joystick Button
-      Name: ShooterIntake
+      Name: ButtonShooterIntake
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
@@ -473,7 +473,7 @@ Children:
           validators: null
           value: whileHeld
       Base: Joystick Button
-      Name: ShooterSpinUp
+      Name: ButtonShooterSpinUp
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
@@ -502,7 +502,7 @@ Children:
           validators: null
           value: whenPressed
       Base: Joystick Button
-      Name: shooterFire
+      Name: ButtonShooterFire
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id010
