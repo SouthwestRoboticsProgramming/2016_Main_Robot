@@ -18,6 +18,7 @@ New code for the robot!
 - Somehow fix the workspace path problem
 - Add motor encoder to elevator once its on the robot.
 - Fix issues with spinner motors.
+- Explain my new naming conventions.
 - StyleGuide
 
 
