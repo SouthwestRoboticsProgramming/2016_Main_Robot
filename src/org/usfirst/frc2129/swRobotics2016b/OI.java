@@ -74,7 +74,7 @@ public class OI {
         rightJoystick = new Joystick(1);
         
         shooterFire = new JoystickButton(rightJoystick, 2);
-        shooterFire.whenPressed(new commandGroup_Fire());
+        shooterFire.whenPressed(new CommandGroupFire());
         shooterSpinUp = new JoystickButton(rightJoystick, 1);
         shooterSpinUp.whileHeld(new CommandGroupSpinUp());
         leftJoystick = new Joystick(0);
@@ -94,7 +94,7 @@ public class OI {
         // SmartDashboard Buttons
         SmartDashboard.putData("CommandGroupPickUpBall", new CommandGroupPickUpBall());
         SmartDashboard.putData("CommandGroupSpinUp", new CommandGroupSpinUp());
-        SmartDashboard.putData("commandGroup_Fire", new commandGroup_Fire());
+        SmartDashboard.putData("CommandGroupFire", new CommandGroupFire());
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("shooterSpinner_spinWheelsForLaunch", new shooterSpinner_spinWheelsForLaunch());
         SmartDashboard.putData("shooterSpinner_spinWheelsForIntake", new shooterSpinner_spinWheelsForIntake());
