@@ -11,7 +11,6 @@
 
 package org.usfirst.frc2129.swRobotics2016b;
 
-import org.usfirst.frc2129.swRobotics2016b.commands.AutonomousCommand;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.Drive;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.Elevator;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.IntakeRoller;
