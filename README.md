@@ -1,9 +1,6 @@
 # sw-robotics-2016-b
 New code for the robot!
 
-#Alert
-- I'm currently renaming everything in an effort to make the code more readable. This basicly means tearing the code apart, pls let me know asap if you see something broken beyond all recognition. thanks!
-
 #PROBLEM SOLVING
 -Whenever I push changes to the robot builder file I mess up the path the the eclipse workspace. This will cause problems if you want to export.
 -Make sure to have a command require the subsystem it works with, things will break otherwise!
