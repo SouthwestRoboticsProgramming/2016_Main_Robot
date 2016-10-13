@@ -11,6 +11,7 @@
 
 package org.usfirst.frc2129.swRobotics2016b.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc2129.swRobotics2016b.Robot;
 
@@ -43,6 +44,7 @@ public class CommandPusherSetOut extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.subsystemPusher.pushBallIntoFiringPath();
+    	Timer.delay(1.0);
     	finished = true;
     }
 
