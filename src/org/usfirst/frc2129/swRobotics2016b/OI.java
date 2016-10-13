@@ -88,7 +88,7 @@ public class OI {
         buttonElevatorUp = new JoystickButton(joystickLeft, 2);
         buttonElevatorUp.whileHeld(new CommandElevatorRaise());
         buttonShooterIntake = new JoystickButton(joystickLeft, 1);
-        buttonShooterIntake.whileHeld(new CommandSpinnersInput());
+        buttonShooterIntake.whileHeld(new CommandGroupPickUpBall());
 
 
         // SmartDashboard Buttons

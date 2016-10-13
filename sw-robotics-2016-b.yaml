@@ -310,7 +310,7 @@ Children:
           name: Command
           type: Command
           validators: &id008 [TypeDropdownSelected]
-          value: CommandSpinnersInput
+          value: CommandGroupPickUpBall
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id009 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
@@ -533,7 +533,7 @@ Children:
         name: Commands
         validators: &id012 [List]
         value:
-        - &id019 !!robotbuilder.data.CommandGroupEntry
+        - &id021 !!robotbuilder.data.CommandGroupEntry
           command:
             base: &id017
               help: A group of commands set to run together in a prescribed way.
@@ -559,7 +559,7 @@ Children:
               supports: {}
               type: Command
             name: CommandGroupSpinUp
-            properties: &id022
+            properties: &id023
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -598,7 +598,7 @@ Children:
                       supports: {}
                       type: Command
                     name: CommandSpinnersOutput
-                    properties: &id026
+                    properties: &id027
                       Parameters: !!robotbuilder.data.properties.ParametersProperty
                         default: []
                         name: Parameters
@@ -627,7 +627,7 @@ Children:
                   command:
                     base: *id016
                     name: CommandRollerOutput
-                    properties: &id025
+                    properties: &id026
                       Parameters: !!robotbuilder.data.properties.ParametersProperty
                         default: []
                         name: Parameters
@@ -662,11 +662,11 @@ Children:
             validators: null
             value: []
           previous: null
-        - &id021 !!robotbuilder.data.CommandGroupEntry
+        - &id022 !!robotbuilder.data.CommandGroupEntry
           command:
             base: *id017
             name: CommandGroupFire
-            properties: &id023
+            properties: &id024
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -682,11 +682,30 @@ Children:
                 name: Commands
                 validators: *id012
                 value:
-                - &id018 !!robotbuilder.data.CommandGroupEntry
+                - &id020 !!robotbuilder.data.CommandGroupEntry
                   command:
-                    base: *id016
+                    base: &id019
+                      help: A command specifies an action that the robot can perform.
+                      name: Command
+                      properties:
+                      - !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+                        name: Requires, type: Subsystem, validators: null, value: None}
+                      - !!robotbuilder.data.properties.BooleanProperty {default: true,
+                        name: Button on SmartDashboard, validators: null, value: true}
+                      - !!robotbuilder.data.properties.ParametersProperty
+                        default: []
+                        name: Parameters
+                        validators: null
+                        value: []
+                      - !!robotbuilder.data.properties.ParameterSetProperty
+                        default: &id018 []
+                        name: Parameter presets
+                        validators: null
+                        value: *id018
+                      supports: {}
+                      type: Command
                     name: CommandPusherSetOut
-                    properties: &id029
+                    properties: &id030
                       Parameters: !!robotbuilder.data.properties.ParametersProperty
                         default: []
                         name: Parameters
@@ -713,9 +732,9 @@ Children:
                   previous: null
                 - !!robotbuilder.data.CommandGroupEntry
                   command:
-                    base: *id016
+                    base: *id019
                     name: CommandPusherSetIn
-                    properties: &id030
+                    properties: &id031
                       Parameters: !!robotbuilder.data.properties.ParametersProperty
                         default: []
                         name: Parameters
@@ -739,7 +758,7 @@ Children:
                     name: ParametersProperty
                     validators: null
                     value: []
-                  previous: *id018
+                  previous: *id020
               Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
                 default: true, name: Button on SmartDashboard, validators: null, value: true}
           hasMatch: true
@@ -749,31 +768,12 @@ Children:
             name: ParametersProperty
             validators: null
             value: []
-          previous: *id019
+          previous: *id021
         - !!robotbuilder.data.CommandGroupEntry
           command:
-            base:
-              help: A command specifies an action that the robot can perform.
-              name: Command
-              properties:
-              - !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: None}
-              - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
-                validators: null, value: true}
-              - !!robotbuilder.data.properties.ParametersProperty
-                default: []
-                name: Parameters
-                validators: null
-                value: []
-              - !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id020 []
-                name: Parameter presets
-                validators: null
-                value: *id020
-              supports: {}
-              type: Command
+            base: *id016
             name: CommandSpinnersStop
-            properties: &id028
+            properties: &id029
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -795,7 +795,7 @@ Children:
             name: ParametersProperty
             validators: null
             value: []
-          previous: *id021
+          previous: *id022
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
@@ -821,7 +821,7 @@ Children:
           command:
             base: *id016
             name: CommandRollerIntake
-            properties: &id024
+            properties: &id025
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -848,7 +848,7 @@ Children:
           command:
             base: *id016
             name: CommandSpinnersInput
-            properties: &id027
+            properties: &id028
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -876,11 +876,11 @@ Children:
     Base: Command Group
     Name: CommandGroupPickUpBall
   - Children: []
-    Properties: *id022
+    Properties: *id023
     Base: Command Group
     Name: CommandGroupSpinUp
   - Children: []
-    Properties: *id023
+    Properties: *id024
     Base: Command Group
     Name: CommandGroupFire
   - Children: []
@@ -974,31 +974,31 @@ Children:
     Base: Command
     Name: CommandRollerStop
   - Children: []
-    Properties: *id024
+    Properties: *id025
     Base: Command
     Name: CommandRollerIntake
   - Children: []
-    Properties: *id025
+    Properties: *id026
     Base: Command
     Name: CommandRollerOutput
   - Children: []
-    Properties: *id026
+    Properties: *id027
     Base: Command
     Name: CommandSpinnersOutput
   - Children: []
-    Properties: *id027
+    Properties: *id028
     Base: Command
     Name: CommandSpinnersInput
   - Children: []
-    Properties: *id028
+    Properties: *id029
     Base: Command
     Name: CommandSpinnersStop
   - Children: []
-    Properties: *id029
+    Properties: *id030
     Base: Command
     Name: CommandPusherSetOut
   - Children: []
-    Properties: *id030
+    Properties: *id031
     Base: Command
     Name: CommandPusherSetIn
   - Children: []
