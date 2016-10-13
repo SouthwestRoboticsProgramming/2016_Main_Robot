@@ -76,7 +76,7 @@ public class OI {
         buttonShooterSpinUp = new JoystickButton(joystickRight, 2);
         buttonShooterSpinUp.whileHeld(new CommandGroupSpinUp());
         buttonShooterFire = new JoystickButton(joystickRight, 1);
-        buttonShooterFire.whenPressed(new CommandGroupFire());
+        buttonShooterFire.whenPressed(new CommandGroupLaunch());
         joystickLeft = new Joystick(0);
         
         buttonRollerOutput = new JoystickButton(joystickLeft, 5);
