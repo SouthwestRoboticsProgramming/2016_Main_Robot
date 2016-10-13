@@ -535,7 +535,7 @@ Children:
         value:
         - &id019 !!robotbuilder.data.CommandGroupEntry
           command:
-            base: &id018
+            base: &id017
               help: A group of commands set to run together in a prescribed way.
               name: Command Group
               properties:
@@ -558,8 +558,8 @@ Children:
                 value: *id014
               supports: {}
               type: Command
-            name: CommandGroupFire
-            properties: &id021
+            name: CommandGroupSpinUp
+            properties: &id022
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -575,7 +575,7 @@ Children:
                 name: Commands
                 validators: *id012
                 value:
-                - &id017 !!robotbuilder.data.CommandGroupEntry
+                - !!robotbuilder.data.CommandGroupEntry
                   command:
                     base: &id016
                       help: A command specifies an action that the robot can perform.
@@ -597,96 +597,8 @@ Children:
                         value: *id015
                       supports: {}
                       type: Command
-                    name: CommandPusherSetOut
-                    properties: &id026
-                      Parameters: !!robotbuilder.data.properties.ParametersProperty
-                        default: []
-                        name: Parameters
-                        validators: null
-                        value: []
-                      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {
-                        default: None, name: Requires, type: Subsystem, validators: null,
-                        value: None}
-                      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-                        default: []
-                        name: Parameter presets
-                        validators: null
-                        value: []
-                      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
-                        default: true, name: Button on SmartDashboard, validators: null,
-                        value: true}
-                  hasMatch: true
-                  order: Sequential
-                  parameters:
-                    default: []
-                    name: ParametersProperty
-                    validators: null
-                    value: []
-                  previous: null
-                - !!robotbuilder.data.CommandGroupEntry
-                  command:
-                    base: *id016
-                    name: CommandPusherSetIn
-                    properties: &id027
-                      Parameters: !!robotbuilder.data.properties.ParametersProperty
-                        default: []
-                        name: Parameters
-                        validators: null
-                        value: []
-                      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {
-                        default: None, name: Requires, type: Subsystem, validators: null,
-                        value: None}
-                      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-                        default: []
-                        name: Parameter presets
-                        validators: null
-                        value: []
-                      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
-                        default: true, name: Button on SmartDashboard, validators: null,
-                        value: true}
-                  hasMatch: true
-                  order: Sequential
-                  parameters:
-                    default: []
-                    name: ParametersProperty
-                    validators: null
-                    value: []
-                  previous: *id017
-              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
-                default: true, name: Button on SmartDashboard, validators: null, value: true}
-          hasMatch: true
-          order: Sequential
-          parameters:
-            default: []
-            name: ParametersProperty
-            validators: null
-            value: []
-          previous: null
-        - !!robotbuilder.data.CommandGroupEntry
-          command:
-            base: *id018
-            name: CommandGroupSpinUp
-            properties: &id020
-              Parameters: !!robotbuilder.data.properties.ParametersProperty
-                default: []
-                name: Parameters
-                validators: null
-                value: []
-              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-                default: []
-                name: Parameter presets
-                validators: null
-                value: []
-              Commands: !!robotbuilder.data.properties.ListProperty
-                default: []
-                name: Commands
-                validators: *id012
-                value:
-                - !!robotbuilder.data.CommandGroupEntry
-                  command:
-                    base: *id016
                     name: CommandSpinnersOutput
-                    properties: &id024
+                    properties: &id026
                       Parameters: !!robotbuilder.data.properties.ParametersProperty
                         default: []
                         name: Parameters
@@ -715,7 +627,7 @@ Children:
                   command:
                     base: *id016
                     name: CommandRollerOutput
-                    properties: &id023
+                    properties: &id025
                       Parameters: !!robotbuilder.data.properties.ParametersProperty
                         default: []
                         name: Parameters
@@ -749,7 +661,141 @@ Children:
             name: ParametersProperty
             validators: null
             value: []
+          previous: null
+        - &id021 !!robotbuilder.data.CommandGroupEntry
+          command:
+            base: *id017
+            name: CommandGroupFire
+            properties: &id023
+              Parameters: !!robotbuilder.data.properties.ParametersProperty
+                default: []
+                name: Parameters
+                validators: null
+                value: []
+              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+                default: []
+                name: Parameter presets
+                validators: null
+                value: []
+              Commands: !!robotbuilder.data.properties.ListProperty
+                default: []
+                name: Commands
+                validators: *id012
+                value:
+                - &id018 !!robotbuilder.data.CommandGroupEntry
+                  command:
+                    base: *id016
+                    name: CommandPusherSetOut
+                    properties: &id029
+                      Parameters: !!robotbuilder.data.properties.ParametersProperty
+                        default: []
+                        name: Parameters
+                        validators: null
+                        value: []
+                      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {
+                        default: None, name: Requires, type: Subsystem, validators: null,
+                        value: None}
+                      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+                        default: []
+                        name: Parameter presets
+                        validators: null
+                        value: []
+                      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
+                        default: true, name: Button on SmartDashboard, validators: null,
+                        value: true}
+                  hasMatch: true
+                  order: Sequential
+                  parameters:
+                    default: []
+                    name: ParametersProperty
+                    validators: null
+                    value: []
+                  previous: null
+                - !!robotbuilder.data.CommandGroupEntry
+                  command:
+                    base: *id016
+                    name: CommandPusherSetIn
+                    properties: &id030
+                      Parameters: !!robotbuilder.data.properties.ParametersProperty
+                        default: []
+                        name: Parameters
+                        validators: null
+                        value: []
+                      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {
+                        default: None, name: Requires, type: Subsystem, validators: null,
+                        value: None}
+                      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+                        default: []
+                        name: Parameter presets
+                        validators: null
+                        value: []
+                      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
+                        default: true, name: Button on SmartDashboard, validators: null,
+                        value: true}
+                  hasMatch: true
+                  order: Sequential
+                  parameters:
+                    default: []
+                    name: ParametersProperty
+                    validators: null
+                    value: []
+                  previous: *id018
+              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
+                default: true, name: Button on SmartDashboard, validators: null, value: true}
+          hasMatch: true
+          order: Sequential
+          parameters:
+            default: []
+            name: ParametersProperty
+            validators: null
+            value: []
           previous: *id019
+        - !!robotbuilder.data.CommandGroupEntry
+          command:
+            base:
+              help: A command specifies an action that the robot can perform.
+              name: Command
+              properties:
+              - !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+                name: Requires, type: Subsystem, validators: null, value: None}
+              - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
+                validators: null, value: true}
+              - !!robotbuilder.data.properties.ParametersProperty
+                default: []
+                name: Parameters
+                validators: null
+                value: []
+              - !!robotbuilder.data.properties.ParameterSetProperty
+                default: &id020 []
+                name: Parameter presets
+                validators: null
+                value: *id020
+              supports: {}
+              type: Command
+            name: CommandSpinnersStop
+            properties: &id028
+              Parameters: !!robotbuilder.data.properties.ParametersProperty
+                default: []
+                name: Parameters
+                validators: null
+                value: []
+              Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+                name: Requires, type: Subsystem, validators: null, value: SubsystemSpinners}
+              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+                default: []
+                name: Parameter presets
+                validators: null
+                value: []
+              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
+                default: true, name: Button on SmartDashboard, validators: null, value: true}
+          hasMatch: true
+          order: Sequential
+          parameters:
+            default: []
+            name: ParametersProperty
+            validators: null
+            value: []
+          previous: *id021
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
@@ -775,7 +821,7 @@ Children:
           command:
             base: *id016
             name: CommandRollerIntake
-            properties: &id022
+            properties: &id024
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -802,7 +848,7 @@ Children:
           command:
             base: *id016
             name: CommandSpinnersInput
-            properties: &id025
+            properties: &id027
               Parameters: !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
@@ -830,11 +876,11 @@ Children:
     Base: Command Group
     Name: CommandGroupPickUpBall
   - Children: []
-    Properties: *id020
+    Properties: *id022
     Base: Command Group
     Name: CommandGroupSpinUp
   - Children: []
-    Properties: *id021
+    Properties: *id023
     Base: Command Group
     Name: CommandGroupFire
   - Children: []
@@ -928,45 +974,31 @@ Children:
     Base: Command
     Name: CommandRollerStop
   - Children: []
-    Properties: *id022
+    Properties: *id024
     Base: Command
     Name: CommandRollerIntake
   - Children: []
-    Properties: *id023
+    Properties: *id025
     Base: Command
     Name: CommandRollerOutput
   - Children: []
-    Properties: *id024
+    Properties: *id026
     Base: Command
     Name: CommandSpinnersOutput
   - Children: []
-    Properties: *id025
+    Properties: *id027
     Base: Command
     Name: CommandSpinnersInput
   - Children: []
-    Properties:
-      Parameters: !!robotbuilder.data.properties.ParametersProperty
-        default: []
-        name: Parameters
-        validators: null
-        value: []
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: SubsystemSpinners}
-      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: []
-        name: Parameter presets
-        validators: null
-        value: []
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+    Properties: *id028
     Base: Command
     Name: CommandSpinnersStop
   - Children: []
-    Properties: *id026
+    Properties: *id029
     Base: Command
     Name: CommandPusherSetOut
   - Children: []
-    Properties: *id027
+    Properties: *id030
     Base: Command
     Name: CommandPusherSetIn
   - Children: []
