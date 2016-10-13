@@ -92,6 +92,7 @@ public class OI {
 
 
         // SmartDashboard Buttons
+        SmartDashboard.putData("CommandGroupLaunch", new CommandGroupLaunch());
         SmartDashboard.putData("CommandGroupPickUpBall", new CommandGroupPickUpBall());
         SmartDashboard.putData("CommandGroupSpinUp", new CommandGroupSpinUp());
         SmartDashboard.putData("CommandGroupFire", new CommandGroupFire());
