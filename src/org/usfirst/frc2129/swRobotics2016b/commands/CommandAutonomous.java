@@ -47,7 +47,7 @@ public class CommandAutonomous extends Command {
     protected void execute() {
     	if(System.currentTimeMillis() - startTime < 1000){	//To change the drive time, change the value that is currently 1000
     	
-    	Robot.subsystemDrive.DriveCommand(0.2, 0.2);	//Sets power to 0.2.
+    	Robot.subsystemDrive.DriveCommand(0.8, 0.8);	//Sets power to 0.2.
     	System.out.println("Driving");
     	
     	} else {
