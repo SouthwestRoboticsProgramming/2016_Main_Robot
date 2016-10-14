@@ -473,7 +473,7 @@ Children:
           validators: null
           value: whenPressed
       Base: Joystick Button
-      Name: ButtonShooterFire
+      Name: ButtonShooterLaunch
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
@@ -494,7 +494,7 @@ Children:
           name: Command
           type: Command
           validators: *id008
-          value: CommandGroupSpinUp
+          value: CommandGroupShooterStop
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id009
           default: whileHeld
@@ -502,7 +502,7 @@ Children:
           validators: null
           value: whileHeld
       Base: Joystick Button
-      Name: ButtonShooterSpinUp
+      Name: ButtonShooterStop
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id010
