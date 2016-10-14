@@ -185,7 +185,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: &id006 [CANID]
-          value: '1'
+          value: '0'
       Base: CAN Talon
       Name: cTalonRoller
     Properties:
@@ -265,7 +265,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id006
-          value: '0'
+          value: '1'
       Base: CAN Talon
       Name: cTalonElevator
     Properties:
@@ -473,7 +473,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: &id012 [List]
+        validators: &id014 [List]
         value:
         - &id021 !!robotbuilder.data.CommandGroupEntry
           command:
@@ -484,20 +484,20 @@ Children:
               - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
                 validators: null, value: true}
               - !!robotbuilder.data.properties.ListProperty
-                default: &id013 []
+                default: &id012 []
                 name: Commands
-                validators: *id012
-                value: *id013
+                validators: [List]
+                value: *id012
               - !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
                 validators: null
                 value: []
               - !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id014 []
+                default: &id013 []
                 name: Parameter presets
                 validators: null
-                value: *id014
+                value: *id013
               supports: {}
               type: Command
             name: CommandGroupSpinUp
@@ -515,7 +515,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id012
+                validators: *id014
                 value:
                 - !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -622,7 +622,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id012
+                validators: *id014
                 value:
                 - &id020 !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -729,7 +729,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id012
+                validators: *id014
                 value:
                 - !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -818,7 +818,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: *id012
+        validators: *id014
         value:
         - !!robotbuilder.data.CommandGroupEntry
           command:

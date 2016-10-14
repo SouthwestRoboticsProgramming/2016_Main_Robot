@@ -75,7 +75,7 @@ public class RobotMap {
         subsystemSpinnersMotorSpinnerRight = new Jaguar(3);
         LiveWindow.addActuator("SubsystemSpinners", "MotorSpinnerRight", (Jaguar) subsystemSpinnersMotorSpinnerRight);
         
-        subsystemIntakeRollercTalonRoller = new CANTalon(1);
+        subsystemIntakeRollercTalonRoller = new CANTalon(0);
         LiveWindow.addActuator("SubsystemIntakeRoller", "cTalonRoller", subsystemIntakeRollercTalonRoller);
         
         powerDistributionpowerDistributionPanel = new PowerDistributionPanel(0);
@@ -84,7 +84,7 @@ public class RobotMap {
         subsystemPusherServoPusher = new Servo(4);
         LiveWindow.addActuator("SubsystemPusher", "ServoPusher", subsystemPusherServoPusher);
         
-        subsystemElevatorcTalonElevator = new CANTalon(0);
+        subsystemElevatorcTalonElevator = new CANTalon(1);
         LiveWindow.addActuator("SubsystemElevator", "cTalonElevator", subsystemElevatorcTalonElevator);
         
 
