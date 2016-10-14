@@ -2,7 +2,6 @@
 New code for the robot!
 
 #PROBLEM SOLVING
--Whenever I push changes to the robot builder file I mess up the path the the eclipse workspace. This will cause problems if you want to export.
 -Make sure to have a command require the subsystem it works with, things will break otherwise!
 
 # TODO
