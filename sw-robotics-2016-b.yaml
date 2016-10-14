@@ -249,7 +249,7 @@ Children:
         validators: null
         value: []
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
+        name: Default Command, type: Command, validators: null, value: CommandPusherSetIn}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
@@ -310,7 +310,7 @@ Children:
           name: Command
           type: Command
           validators: &id008 [TypeDropdownSelected]
-          value: CommandGroupPickUpBall
+          value: CommandSpinnersInput
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id009 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
@@ -494,7 +494,7 @@ Children:
           name: Command
           type: Command
           validators: *id008
-          value: CommandGroupSpinUp
+          value: CommandSpinnersOutput
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id009
           default: whileHeld
@@ -742,7 +742,7 @@ Children:
                         value: []
                       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {
                         default: None, name: Requires, type: Subsystem, validators: null,
-                        value: None}
+                        value: SubsystemPusher}
                       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
                         default: []
                         name: Parameter presets

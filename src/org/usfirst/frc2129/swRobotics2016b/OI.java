@@ -74,7 +74,7 @@ public class OI {
         joystickRight = new Joystick(1);
         
         buttonShooterSpinUp = new JoystickButton(joystickRight, 2);
-        buttonShooterSpinUp.whileHeld(new CommandGroupSpinUp());
+        buttonShooterSpinUp.whileHeld(new CommandSpinnersOutput());
         buttonShooterFire = new JoystickButton(joystickRight, 1);
         buttonShooterFire.whenPressed(new CommandGroupLaunch());
         joystickLeft = new Joystick(0);
@@ -88,7 +88,7 @@ public class OI {
         buttonElevatorUp = new JoystickButton(joystickLeft, 2);
         buttonElevatorUp.whileHeld(new CommandElevatorRaise());
         buttonShooterIntake = new JoystickButton(joystickLeft, 1);
-        buttonShooterIntake.whileHeld(new CommandGroupPickUpBall());
+        buttonShooterIntake.whileHeld(new CommandSpinnersInput());
 
 
         // SmartDashboard Buttons
