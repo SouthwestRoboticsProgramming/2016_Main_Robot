@@ -51,9 +51,9 @@ public class CommandDrive extends Command {
     	SmartDashboard.putNumber("Left", left);
     	SmartDashboard.putNumber("Right", right);
     	
-    	finished = true;
-    	
     	Robot.subsystemDrive.DriveCommand(left,right);
+    	
+    	finished = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
