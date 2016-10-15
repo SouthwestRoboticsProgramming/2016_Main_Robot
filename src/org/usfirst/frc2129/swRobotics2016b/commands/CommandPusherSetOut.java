@@ -45,11 +45,12 @@ public class CommandPusherSetOut extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Timer.delay(1);
     	Robot.subsystemPusher.pushBallIntoFiringPath();
-    	
-    	if (System.currentTimeMillis() - 750 < TimeStart) {
+    	Timer.delay(.75);
+    	//if (System.currentTimeMillis() - 750 < TimeStart) {
     		finished = true;
-    	}
+    	//}
     }
 
     // Make this return true when this Command no longer needs to run execute()

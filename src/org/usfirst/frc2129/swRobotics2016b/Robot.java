@@ -8,7 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package org.usfirst.frc2129.swRobotics2016b;
 
 import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemDrive;

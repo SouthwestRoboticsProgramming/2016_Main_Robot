@@ -53,8 +53,8 @@ public class SubsystemSpinners extends Subsystem {
     public void spinForInput() {
     	//spinSpeed = Robot.preferences
     	double spinSpeed = Robot.preferences.getDouble("intakeSpinSpeed", .1);
-    	motorSpinnerLeft.set(0.5);
-    	motorSpinnerRight.set(0.5);
+    	motorSpinnerLeft.set(0.75);
+    	motorSpinnerRight.set(0.75);
     }
     
     //Set spinner motors for output
@@ -63,6 +63,11 @@ public class SubsystemSpinners extends Subsystem {
     	double spinSpeed = Robot.preferences.getDouble("shootSpinSpeed", .75);
     	motorSpinnerLeft.set(1.0 * -1.0);
     	motorSpinnerRight.set(1.0 * -1.0);
+    }
+    
+    public void spinForLowGoal() {
+    	motorSpinnerLeft.set(-0.25);
+    	motorSpinnerRight.set(-0.25);
     }
     
     //Set motors to stop

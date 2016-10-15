@@ -48,12 +48,12 @@ public class SubsystemIntakeRoller extends Subsystem {
     
     //Set motor to pull in
     public void SetIntakeIn() {
-    	cTalonRoller.set(0.75);
+    	cTalonRoller.set(1.0);
     }
     
     //Set motor to output
     public void SetIntakeOut() {
-    	cTalonRoller.set(-0.5);
+    	cTalonRoller.set(-1.0);
     }
     
     //Set motor to stop

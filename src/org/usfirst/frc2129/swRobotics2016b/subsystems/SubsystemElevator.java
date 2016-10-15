@@ -49,12 +49,12 @@ public class SubsystemElevator extends Subsystem {
     
   //Set Elevator motor to go up
     public void ElevatorUp() {
-    	cTalonElevator.set(0.5);
+    	cTalonElevator.set(1.0);
     }
     
     //Set Elevator motor to go down
     public void ElevatorDown() {
-    	cTalonElevator.set(-0.5);
+    	cTalonElevator.set(-0.25);
     }
     
     //Set Elevator motor to stop
