@@ -473,7 +473,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: &id014 [List]
+        validators: &id012 [List]
         value:
         - &id021 !!robotbuilder.data.CommandGroupEntry
           command:
@@ -484,20 +484,20 @@ Children:
               - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
                 validators: null, value: true}
               - !!robotbuilder.data.properties.ListProperty
-                default: &id012 []
+                default: &id013 []
                 name: Commands
-                validators: [List]
-                value: *id012
+                validators: *id012
+                value: *id013
               - !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
                 validators: null
                 value: []
               - !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id013 []
+                default: &id014 []
                 name: Parameter presets
                 validators: null
-                value: *id013
+                value: *id014
               supports: {}
               type: Command
             name: CommandGroupSpinUp
@@ -515,7 +515,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id014
+                validators: *id012
                 value:
                 - !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -622,7 +622,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id014
+                validators: *id012
                 value:
                 - &id020 !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -729,7 +729,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id014
+                validators: *id012
                 value:
                 - !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -818,7 +818,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: *id014
+        validators: *id012
         value:
         - !!robotbuilder.data.CommandGroupEntry
           command:
@@ -1012,6 +1012,24 @@ Children:
     Properties: *id033
     Base: Command
     Name: CommandSpinnersInput
+  - Children: []
+    Properties:
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: SubsystemSpinners}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id034 []
+        name: Parameter presets
+        validators: null
+        value: *id034
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: CommandSpinnersOutputLow
   Properties: {}
   Base: Commands
   Name: Commands
