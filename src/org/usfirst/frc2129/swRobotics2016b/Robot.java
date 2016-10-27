@@ -35,6 +35,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 	
+	//Values for current related stuff
+	double CurrentLeft = 0.0;
+	double MaxCurrentLeft = 0.0;
+	double CurrentRight = 0.0;
+	double MaxCurrentRight = 0.0;
+	
 	public static Preferences preferences;
 	CameraServer server;
 
@@ -56,6 +62,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+    	
 	    RobotMap.init();
 	    
 		server = CameraServer.getInstance();
@@ -91,11 +98,12 @@ public class Robot extends IterativeRobot {
         // Display the status of each of the subsystems in SmartDashboard
         // ===============================================================
         SmartDashboard.putData(subsystemDrive);
-        SmartDashboard.putData(subsystemElevator);
-        SmartDashboard.putData(subsystemSpinners);
-        SmartDashboard.putData(subsystemPusher);
-        SmartDashboard.putData(subsystemIntakeRoller);
-        SmartDashboard.putData(powerDistribution);
+        //SmartDashboard.putData(subsystemElevator);
+        //SmartDashboard.putData(subsystemSpinners);
+        //SmartDashboard.putData(subsystemPusher);
+        //SmartDashboard.putData(subsystemIntakeRoller);
+        //SmartDashboard.putData(powerDistribution);
+        
     }
 
     /**
@@ -123,6 +131,9 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
+    	//Handle Reseting current meter
+    	MaxCurrentRight = 0.0;
+    	MaxCurrentLeft = 0.0;
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
@@ -135,6 +146,30 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        
+        
+        //Poll Current
+        CurrentLeft = powerDistribution.getCurrent(0);
+        CurrentRight = powerDistribution.getCurrent(1);
+        
+        //Handle Current Min/Max for Right Side
+        if (CurrentRight > MaxCurrentRight)
+        	MaxCurrentRight = CurrentRight;
+        
+        //Handle Current Min/Max for Left Side
+        if (CurrentLeft > MaxCurrentLeft)
+        	MaxCurrentLeft = CurrentLeft;
+
+         
+        //Push Data to SmartDashboard
+        SmartDashboard.putNumber("Right Current", CurrentRight);
+        SmartDashboard.putNumber("Right Max Current", MaxCurrentRight);
+        SmartDashboard.putNumber("Left Current", CurrentLeft);
+        SmartDashboard.putNumber("Left Max Current", MaxCurrentLeft);
+        
+        SmartDashboard.putNumber("Left Rate", subsystemDrive.GetLeftRate());
+        SmartDashboard.putNumber("Right Rate", subsystemDrive.GetRightRate());
     }
 
     /**
