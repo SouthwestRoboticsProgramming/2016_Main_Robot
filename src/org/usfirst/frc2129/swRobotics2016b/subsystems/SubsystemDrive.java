@@ -13,6 +13,8 @@ package org.usfirst.frc2129.swRobotics2016b.subsystems;
 
 import org.usfirst.frc2129.swRobotics2016b.RobotMap;
 import org.usfirst.frc2129.swRobotics2016b.commands.*;
+
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
