@@ -45,8 +45,8 @@ public class PowerDistribution extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
-    public void getCurrent(int port) {
-    	
+    public double getCurrent(int port) {
+    	return powerDistributionPanel.getCurrent(port);
     }
 }
 
