@@ -168,6 +168,11 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putNumber("Left Current", CurrentLeft);
         SmartDashboard.putNumber("Left Max Current", MaxCurrentLeft);
         
+        SmartDashboard.putNumber("Elevator Current", powerDistribution.getCurrent(13));
+        SmartDashboard.putNumber("IntakeRoller Current", powerDistribution.getCurrent(14));
+        SmartDashboard.putNumber("SpinnerLeft Current", powerDistribution.getCurrent(15));
+        SmartDashboard.putNumber("SpinnerRight", powerDistribution.getCurrent(2));
+        
         SmartDashboard.putNumber("Left Rate", subsystemDrive.GetLeftRate());
         SmartDashboard.putNumber("Right Rate", subsystemDrive.GetRightRate());
     }
