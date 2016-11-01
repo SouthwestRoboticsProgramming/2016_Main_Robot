@@ -36,6 +36,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	
 	//Values for current related stuff
+	double totalCurrent = 0.0;
 	double CurrentLeft = 0.0;
 	double MaxCurrentLeft = 0.0;
 	double CurrentRight = 0.0;
@@ -147,11 +148,13 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         
-        
+        totalCurrent = 0.0;
         
         //Poll Current
         CurrentLeft = powerDistribution.getCurrent(0);
+        totalCurrent += CurrentLeft;
         CurrentRight = powerDistribution.getCurrent(1);
+        totalCurrent += CurrentRight;
         
         //Handle Current Min/Max for Right Side
         if (CurrentRight > MaxCurrentRight)
@@ -169,9 +172,13 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putNumber("Left Max Current", MaxCurrentLeft);
         
         SmartDashboard.putNumber("Elevator Current", powerDistribution.getCurrent(13));
+        totalCurrent += powerDistribution.getCurrent(13);
         SmartDashboard.putNumber("IntakeRoller Current", powerDistribution.getCurrent(14));
+        totalCurrent += powerDistribution.getCurrent(14);
         SmartDashboard.putNumber("SpinnerLeft Current", powerDistribution.getCurrent(15));
+        totalCurrent += powerDistribution.getCurrent(15);
         SmartDashboard.putNumber("SpinnerRight", powerDistribution.getCurrent(2));
+        totalCurrent += powerDistribution.getCurrent(2);
         
         SmartDashboard.putNumber("Left Rate", subsystemDrive.GetLeftRate());
         SmartDashboard.putNumber("Right Rate", subsystemDrive.GetRightRate());
