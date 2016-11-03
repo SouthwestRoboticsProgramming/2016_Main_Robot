@@ -1,6 +1,9 @@
 # sw-robotics-2016-b
 New code for the robot!
 
+#MotorSpreadsheet
+https://docs.google.com/spreadsheets/d/1jdrvpoNu7zftCALZHwvTJWWEyHmHvVIaGpB4WyZz4pM/edit?usp=sharing
+
 #PROBLEM SOLVING
 -Make sure to have a command require the subsystem it works with, things will break otherwise!
 
