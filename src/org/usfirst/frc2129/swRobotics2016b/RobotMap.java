@@ -80,7 +80,7 @@ public class RobotMap {
         subsystemDrivetankDrive.setSensitivity(0.5);
         subsystemDrivetankDrive.setMaxOutput(1.0);
 
-        subsystemDrivetankDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+        subsystemDrivetankDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         subsystemDrivetankDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
         subsystemSpinnersMotorSpinnerLeft = new Jaguar(4);
         LiveWindow.addActuator("SubsystemSpinners", "MotorSpinnerLeft", (Jaguar) subsystemSpinnersMotorSpinnerLeft);
