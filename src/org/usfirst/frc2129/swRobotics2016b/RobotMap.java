@@ -63,13 +63,13 @@ public class RobotMap {
         subsystemDriveleft1 = new Talon(0);
         LiveWindow.addActuator("SubsystemDrive", "left1", (Talon) subsystemDriveleft1);
         
-        subsystemDriveleft2 = new Talon(19);
+        subsystemDriveleft2 = new Talon(1);
         LiveWindow.addActuator("SubsystemDrive", "left2", (Talon) subsystemDriveleft2);
         
         subsystemDriveright1 = new Talon(2);
         LiveWindow.addActuator("SubsystemDrive", "right1", (Talon) subsystemDriveright1);
         
-        subsystemDriveright2 = new Talon(14);
+        subsystemDriveright2 = new Talon(3);
         LiveWindow.addActuator("SubsystemDrive", "right2", (Talon) subsystemDriveright2);
         
         subsystemDrivetankDrive = new RobotDrive(subsystemDriveleft1, subsystemDriveleft2,
@@ -82,22 +82,22 @@ public class RobotMap {
 
         subsystemDrivetankDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         subsystemDrivetankDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        subsystemSpinnersMotorSpinnerLeft = new Jaguar(1);
+        subsystemSpinnersMotorSpinnerLeft = new Jaguar(4);
         LiveWindow.addActuator("SubsystemSpinners", "MotorSpinnerLeft", (Jaguar) subsystemSpinnersMotorSpinnerLeft);
         
-        subsystemSpinnersMotorSpinnerRight = new Jaguar(3);
+        subsystemSpinnersMotorSpinnerRight = new Jaguar(5);
         LiveWindow.addActuator("SubsystemSpinners", "MotorSpinnerRight", (Jaguar) subsystemSpinnersMotorSpinnerRight);
         
-        subsystemIntakeRollercTalonRoller = new CANTalon(0);
+        subsystemIntakeRollercTalonRoller = new CANTalon(1);
         LiveWindow.addActuator("SubsystemIntakeRoller", "cTalonRoller", subsystemIntakeRollercTalonRoller);
         
         powerDistributionpowerDistributionPanel = new PowerDistributionPanel(0);
         LiveWindow.addSensor("PowerDistribution", "powerDistributionPanel", powerDistributionpowerDistributionPanel);
         
-        subsystemPusherServoPusher = new Servo(4);
+        subsystemPusherServoPusher = new Servo(6);
         LiveWindow.addActuator("SubsystemPusher", "ServoPusher", subsystemPusherServoPusher);
         
-        subsystemElevatorcTalonElevator = new CANTalon(1);
+        subsystemElevatorcTalonElevator = new CANTalon(0);
         LiveWindow.addActuator("SubsystemElevator", "cTalonElevator", subsystemElevatorcTalonElevator);
         
 

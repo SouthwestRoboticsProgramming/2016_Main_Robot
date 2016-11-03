@@ -103,7 +103,7 @@ Children:
             default: '0'
             name: Output Channel (PWM)
             validators: *id009
-            value: '19'
+            value: '1'
         Base: Speed Controller
         Name: left2
       - Children: []
@@ -135,7 +135,7 @@ Children:
             default: '0'
             name: Output Channel (PWM)
             validators: *id009
-            value: '14'
+            value: '3'
         Base: Speed Controller
         Name: right2
       Properties:
@@ -210,7 +210,7 @@ Children:
           default: '0'
           name: Output Channel (PWM)
           validators: *id009
-          value: '1'
+          value: '4'
       Base: Speed Controller
       Name: MotorSpinnerLeft
     - Children: []
@@ -226,7 +226,7 @@ Children:
           default: '0'
           name: Output Channel (PWM)
           validators: *id009
-          value: '3'
+          value: '5'
       Base: Speed Controller
       Name: MotorSpinnerRight
     Properties:
@@ -253,7 +253,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: &id012 [CANID]
-          value: '0'
+          value: '1'
       Base: CAN Talon
       Name: cTalonRoller
     Properties:
@@ -307,7 +307,7 @@ Children:
           default: '0'
           name: Output Channel (PWM)
           validators: [PWMOutput]
-          value: '4'
+          value: '6'
       Base: Servo
       Name: ServoPusher
     Properties:
@@ -333,7 +333,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id012
-          value: '1'
+          value: '0'
       Base: CAN Talon
       Name: cTalonElevator
     Properties:
@@ -570,7 +570,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: &id018 [List]
+        validators: &id020 [List]
         value:
         - &id025 !!robotbuilder.data.CommandGroupEntry
           command:
@@ -581,20 +581,20 @@ Children:
               - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
                 validators: null, value: true}
               - !!robotbuilder.data.properties.ListProperty
-                default: &id019 []
+                default: &id018 []
                 name: Commands
-                validators: *id018
-                value: *id019
+                validators: [List]
+                value: *id018
               - !!robotbuilder.data.properties.ParametersProperty
                 default: []
                 name: Parameters
                 validators: null
                 value: []
               - !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id020 []
+                default: &id019 []
                 name: Parameter presets
                 validators: null
-                value: *id020
+                value: *id019
               supports: {}
               type: Command
             name: CommandGroupSpinUp
@@ -612,7 +612,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id018
+                validators: *id020
                 value:
                 - !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -719,7 +719,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id018
+                validators: *id020
                 value:
                 - &id024 !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -807,7 +807,7 @@ Children:
               Commands: !!robotbuilder.data.properties.ListProperty
                 default: []
                 name: Commands
-                validators: *id018
+                validators: *id020
                 value:
                 - !!robotbuilder.data.CommandGroupEntry
                   command:
@@ -896,7 +896,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: *id018
+        validators: *id020
         value:
         - &id028 !!robotbuilder.data.CommandGroupEntry
           command:
@@ -964,7 +964,7 @@ Children:
       Commands: !!robotbuilder.data.properties.ListProperty
         default: []
         name: Commands
-        validators: *id018
+        validators: *id020
         value:
         - !!robotbuilder.data.CommandGroupEntry
           command:
