@@ -253,7 +253,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: &id012 [CANID]
-          value: '1'
+          value: '0'
       Base: CAN Talon
       Name: cTalonRoller
     Properties:
@@ -333,7 +333,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id012
-          value: '0'
+          value: '1'
       Base: CAN Talon
       Name: cTalonElevator
     Properties:
