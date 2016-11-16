@@ -372,6 +372,16 @@ Children:
           value: '8'
       Base: Ultrasonic
       Name: UltrasonicSensor
+    - Children: []
+      Properties:
+        Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['0', '1', '2', '3', '4', '5', '6', '7']
+          default: '0'
+          name: Input Channel (Analog)
+          validators: [AnalogInput]
+          value: '0'
+      Base: Analog Input
+      Name: AnalogUltrasonic
     Properties:
       Default command parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
