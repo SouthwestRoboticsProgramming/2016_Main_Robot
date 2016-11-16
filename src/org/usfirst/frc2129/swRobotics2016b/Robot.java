@@ -17,6 +17,7 @@ import org.usfirst.frc2129.swRobotics2016b.commands.CommandAutonomous;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.PowerDistribution;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemPusher;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemSpinners;
+import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemUltrasonic;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
