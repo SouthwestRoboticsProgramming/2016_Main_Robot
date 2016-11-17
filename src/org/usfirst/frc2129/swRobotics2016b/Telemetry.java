@@ -37,14 +37,8 @@ public class Telemetry {
         //Handle Current Min/Max for Left Side
         if (CurrentLeft > MaxCurrentLeft)
         	MaxCurrentLeft = CurrentLeft;
-
-        //get ultrasonic
-        double dDigitalUltrasonic = SubsystemUltrasonic.getDigitalDistance();
-        double dAnalogUltrasonic = SubsystemUltrasonic.getAnalogDistance();
          
         //Push Data to SmartDashboard
-        SmartDashboard.putNumber("UltrasonicDigitalDistance", dDigitalUltrasonic);
-        SmartDashboard.putNumber("UltrasonicAnalogDistance", dAnalogUltrasonic);
         SmartDashboard.putNumber("Right Current", CurrentRight);
         SmartDashboard.putNumber("Right Max Current", MaxCurrentRight);
         SmartDashboard.putNumber("Left Current", CurrentLeft);
