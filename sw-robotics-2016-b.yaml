@@ -395,14 +395,14 @@ Children:
         validators: null
         value: []
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: CommandSerialUltrasonicSubsystemReport}
+        name: Default Command, type: Command, validators: null, value: None}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
         validators: null
         value: []
     Base: Subsystem
-    Name: SerialUltrasonicSubsystem
+    Name: SubsystemUltrasonic2
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -1222,7 +1222,7 @@ Children:
         validators: null
         value: []
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: SerialUltrasonicSubsystem}
+        name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
         default: []
         name: Parameter presets
@@ -1231,7 +1231,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: CommandSerialUltrasonicSubsystemReport
+    Name: CommandUltrasonic2SubsystemReport
   Properties: {}
   Base: Commands
   Name: Commands
