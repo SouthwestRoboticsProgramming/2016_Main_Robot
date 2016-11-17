@@ -58,6 +58,8 @@ public class OI {
     public JoystickButton buttonShooterIntake;
     public JoystickButton buttonElevatorUp;
     public JoystickButton buttonElevatorDown;
+    public JoystickButton buttonTilterUp;
+    public JoystickButton buttonTilterDown;
     public Joystick joystickLeft;
     public JoystickButton buttonShooterLaunch;
     public JoystickButton buttonShooterStop;
@@ -80,6 +82,10 @@ public class OI {
         buttonShooterLaunch.whenPressed(new CommandGroupLaunch());
         joystickLeft = new Joystick(0);
         
+        buttonTilterDown = new JoystickButton(joystickLeft, 5);
+        buttonTilterDown.whileHeld(new CommandTilterDown());
+        buttonTilterUp = new JoystickButton(joystickLeft, 4);
+        buttonTilterUp.whileHeld(new CommandTilterUp());
         buttonElevatorDown = new JoystickButton(joystickLeft, 3);
         buttonElevatorDown.whileHeld(new CommandElevatorLower());
         buttonElevatorUp = new JoystickButton(joystickLeft, 2);
