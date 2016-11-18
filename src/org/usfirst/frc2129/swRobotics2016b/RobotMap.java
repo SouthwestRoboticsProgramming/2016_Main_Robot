@@ -90,6 +90,7 @@ public class RobotMap {
         
         subsystemSpinnersMotorSpinnerRight = new Jaguar(5);
         LiveWindow.addActuator("SubsystemSpinners", "MotorSpinnerRight", (Jaguar) subsystemSpinnersMotorSpinnerRight);
+        subsystemSpinnersMotorSpinnerRight.setInverted(true);
         
         subsystemIntakeRollercTalonRoller = new CANTalon(0);
         LiveWindow.addActuator("SubsystemIntakeRoller", "cTalonRoller", subsystemIntakeRollercTalonRoller);

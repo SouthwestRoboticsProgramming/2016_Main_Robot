@@ -4,6 +4,7 @@ import org.usfirst.frc2129.swRobotics2016b.subsystems.PowerDistribution;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemUltrasonic;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemDrive;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -68,6 +69,14 @@ public class Telemetry {
     	MaxCurrentLeft = 0.0;
     	
     	Log( "Left Current\tRight Current\tLeft Rate\tRight Rate");
+	}
+	
+	public static void LogEncoder(String prefix, Encoder encoder){
+		SmartDashboard.putNumber(prefix+".getDistance():", encoder.getDistance());
+		SmartDashboard.putNumber(prefix+".get():", encoder.get());
+		SmartDashboard.putNumber(prefix+".getRate():", encoder.getRate());
+		SmartDashboard.putNumber(prefix+".pidGet():", encoder.pidGet());
+		SmartDashboard.putNumber(prefix+".getRaw():", encoder.getRaw());
 	}
 	
 	public static void Log( String logMsg )

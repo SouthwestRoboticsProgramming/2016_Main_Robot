@@ -49,6 +49,7 @@ public class CommandUltrasonic2SubsystemReport extends Command {
     	
     	SmartDashboard.putNumber("ultra2_voltage", Robot.subsystemUltrasonic2.in.getVoltage());
     	SmartDashboard.putNumber("ultra2_value", Robot.subsystemUltrasonic2.in.getValue());
+//    	SmartDashboard.putNumber(key, value);
     }
 
     // Make this return true when this Command no longer needs to run execute()
