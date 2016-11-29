@@ -1,7 +1,6 @@
 package org.usfirst.frc2129.swRobotics2016b;
 
 import org.usfirst.frc2129.swRobotics2016b.subsystems.PowerDistribution;
-import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemUltrasonic;
 import org.usfirst.frc2129.swRobotics2016b.subsystems.SubsystemDrive;
 
 import edu.wpi.first.wpilibj.Encoder;

@@ -12,13 +12,12 @@
 package org.usfirst.frc2129.swRobotics2016b.subsystems;
 
 import org.usfirst.frc2129.swRobotics2016b.RobotMap;
-import org.usfirst.frc2129.swRobotics2016b.commands.*;
+import org.usfirst.frc2129.swRobotics2016b.commands.CommandTilterStop;
 
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -55,7 +54,7 @@ public class SubsystemTilter extends Subsystem {
         
         encoder = new Encoder(8, 9, false, EncodingType.k4X);
         pid_controller = new PIDController(0.2, 0.6, 0.05, encoder, motorTilter);
-        pid_controller.setTolerance(2.5f);
+        pid_controller.setPercentTolerance(2.5f);
     }
     
     public void pidStart(){

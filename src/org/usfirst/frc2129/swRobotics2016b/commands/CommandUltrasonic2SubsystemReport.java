@@ -11,7 +11,6 @@
 
 package org.usfirst.frc2129.swRobotics2016b.commands;
 
-import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 

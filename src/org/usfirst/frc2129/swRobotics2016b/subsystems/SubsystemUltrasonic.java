@@ -12,11 +12,8 @@
 package org.usfirst.frc2129.swRobotics2016b.subsystems;
 
 import org.usfirst.frc2129.swRobotics2016b.RobotMap;
-import org.usfirst.frc2129.swRobotics2016b.*;
 
-import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Ultrasonic;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 

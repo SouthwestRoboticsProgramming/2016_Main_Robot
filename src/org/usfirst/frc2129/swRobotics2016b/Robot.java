@@ -152,8 +152,8 @@ public class Robot extends IterativeRobot {
         Telemetry.reportDrivePower(subsystemDrive, powerDistribution);
         Telemetry.LogEncoder("leftDrive", RobotMap.subsystemDriveEncoderDriveLeft);
         Telemetry.LogEncoder("rightDrive", RobotMap.subsystemDriveEncoderDriveRight);
-        Telemetry.LogEncoder("armLifter", this.subsystemElevator.encoder);
-        Telemetry.LogEncoder("tilter", this.subsystemTilter.encoder);
+        Telemetry.LogEncoder("armLifter", Robot.subsystemElevator.encoder);
+        Telemetry.LogEncoder("tilter", Robot.subsystemTilter.encoder);
     }
 
 
