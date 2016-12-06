@@ -11,6 +11,7 @@
 
 package org.usfirst.frc2129.swRobotics2016b.subsystems;
 
+import org.usfirst.frc2129.swRobotics2016b.Robot;
 import org.usfirst.frc2129.swRobotics2016b.RobotMap;
 import org.usfirst.frc2129.swRobotics2016b.commands.CommandDrive;
 
@@ -56,6 +57,9 @@ public class SubsystemDrive extends Subsystem {
     
     public void DriveCommand(double left, double right)
     {
+    	left *= Robot.oi.getJoystickLeft().getThrottle();
+    	right *= Robot.oi.getJoystickRight().getThrottle();
+    	
     	tankDrive.tankDrive(left, right);
     }
     
